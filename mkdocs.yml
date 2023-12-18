@@ -1,0 +1,106 @@
+# 网站信息
+site_name: 30天入门Python全栈开发 #
+site_url: https://eanyang7.github.io/Python-Full-Stack # mkdocs serve ——》 Browser connected: http://127.0.0.1:8000/xxx/
+site_description: "Python-Full-Stack" #
+site_author: Ean Yang
+# 仓库
+repo_url: https://github.com/EanYang7/Python-Full-Stack #
+repo_name: github仓库
+
+theme:
+  name: material
+  language: zh
+  # 网站logo
+  logo: assets/logo.jpg #
+  # 网站favicon
+  favicon: assets/favicon.jpg #
+  # 设置右上角图标
+  icon:
+    repo: fontawesome/brands/github-alt
+    edit: material/pencil
+    view: material/eye
+  palette:
+    # 可选颜色见https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#primary-color
+    # 切换为暗黑模式
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: red # 主色调
+      accent: deep purple # 强调色调
+      toggle:
+        icon: material/weather-sunny
+        name: 切换为暗黑模式
+
+    # 切换为浅色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: red
+      toggle:
+        icon: material/weather-night
+        name: 切换为浅色模式
+  # 导航设置
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    # - navigation.tabs #选项卡
+    # - navigation.tabs.sticky #选项卡固定，滚动时还可见
+    # - navigation.sections #章节视图，可以和tabs搭配使用
+    # - navigation.expand #展开侧边栏
+    - navigation.prune
+    # - navigation.indexes # 点击文件夹显示index.md的内容
+    - navigation.top # 回到顶部
+    - toc.follow # 目录跟随
+    - header.autohide # 滚动时隐藏顶部
+    - navigation.footer # 底部导航，上下页
+    - search.suggest # 搜索建议
+    - search.highlight # 搜索高亮
+    - search.share # 搜索分享
+    # 编辑和查看源码
+    - content.action.edit
+    - content.action.view
+    - content.code.copy
+# 编辑链接
+edit_uri: "tree/main/docs/"
+extra:
+  generator: false
+  # 社交链接
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/YQisme
+      name: github主页
+    - icon: fontawesome/brands/bilibili
+      link: https://space.bilibili.com/244185393?spm_id_from=333.788.0.0
+      name: b站主页
+    - icon: fontawesome/solid/person
+      link: https://eanyang7.com
+      name: 个人主页
+
+copyright: Copyright &copy; 2023 Ean Yang
+
+plugins:
+  - search:
+      separator: '[\s\u200b\-]'
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - mkdocs-jupyter:
+      include_source: True
+      # ignore_h1_titles: True # 忽略一级标题(默认为False,会替换掉nav自定义的标题)
+
+markdown_extensions:
+  - toc:
+      permalink: ⚓︎
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.arithmatex:
+      generic: true
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+
+# nav:
+#   - 主页: index.md
+#   - 示例:
+#     - 示例1: demo/demo1.md
+#     - 示例2: demo/demo2.md
