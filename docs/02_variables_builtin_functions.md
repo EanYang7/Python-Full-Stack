@@ -1,38 +1,38 @@
 # 02 变量，内置函数
 
-## Built in functions
+## 内置函数
 
-In Python we have lots of built-in functions. Built-in functions are globally available for your use that mean you can make use of the built-in functions without importing or configuring. Some of the most commonly used Python built-in functions are the following: _print()_, _len()_, _type()_, _int()_, _float()_, _str()_, _input()_, _list()_, _dict()_, _min()_, _max()_, _sum()_, _sorted()_, _open()_, _file()_, _help()_, and _dir()_. In the following table you will see an exhaustive list of Python built-in functions taken from [python documentation](https://docs.python.org/3.9/library/functions.html).
+在Python中，我们有许多内置函数。内置函数是全局可用的，这意味着您可以在不导入或配置的情况下使用内置函数。以下是一些最常用的Python内置函数：_print()_、_len()_、_type()_、_int()_、_float()_、_str()_、_input()_、_list()_、_dict()_、_min()_、_max()_、_sum()_、_sorted()_、_open()_、_file()_、_help()_ 和 _dir()_。在下表中，您将看到来自[Python文档](https://docs.python.org/3.9/library/functions.html)的Python内置函数的详尽列表。
 
-![Built-in Functions](./images/builtin-functions.png)
+![内置函数](./images/builtin-functions.png)
 
-Let us open the Python shell and start using some of the most common built-in functions.
+让我们打开Python shell并开始使用一些最常见的内置函数。
 
-![Built-in functions](./images/builtin-functions_practice.png)
+![内置函数](./images/builtin-functions_practice.png)
 
-Let us practice more by using different built-in functions
+让我们通过使用不同的内置函数进行更多练习。
 
-![Help and Dir Built in Functions](./images/help_and_dir_builtin.png)
+![内置函数Help和Dir](./images/help_and_dir_builtin.png)
 
-As you can see from the terminal above, Python has got reserved words. We do not use reserved words to declare variables or functions. We will cover variables in the next section.
+正如您从上面的终端中看到的，Python有保留字reserved words。我们不使用保留字来声明变量或函数。我们将在下一节中介绍变量。
 
-I believe, by now you are familiar with built-in functions. Let us do one more practice of built-in functions and we will move on to the next section.
+我相信，到目前为止，您已经熟悉了内置函数。让我们再练习一下内置函数，然后我们将进入下一节。
 
 ![Min Max Sum](./images/builtin-functional-final.png)
 
-## Variables
+## 变量
 
-Variables store data in a computer memory. Mnemonic variables are recommended to use in many programming languages. A mnemonic variable is a variable name that can be easily remembered and associated. A variable refers to a memory address in which data is stored.
-Number at the beginning, special character, hyphen are not allowed when naming a variable. A variable can have a short name (like x, y, z), but a more descriptive name (firstname, lastname, age, country) is highly recommended.
+变量在计算机内存中存储数据。建议在许多编程语言中使用助记符变量。助记符变量是一个易于记忆和关联的变量名称。变量指的是存储数据的内存地址。
+在命名变量时不允许在变量名中以数字、特殊字符或连字符开头。变量可以具有短名称（如x、y、z），但强烈建议使用更具描述性的名称（firstname、lastname、age、country）。
 
-Python Variable Name Rules
+Python变量名称规则
 
-- A variable name must start with a letter or the underscore character
-- A variable name cannot start with a number
-- A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and \_ )
-- Variable names are case-sensitive (firstname, Firstname, FirstName and FIRSTNAME) are different variables)
+- 变量名必须以字母或下划线字符开头
+- 变量名不能以数字开头
+- 变量名只能包含字母数字字符和下划线（A-z、0-9和\_）
+- 变量名区分大小写（firstname、Firstname、FirstName和FIRSTNAME是不同的变量）
 
-Here are some example of valid variable names:
+以下是一些有效变量名称的示例：
 
 ```shell
 firstname
@@ -43,7 +43,7 @@ city
 first_name
 last_name
 capital_city
-_if # if we want to use reserved word as a variable
+_if # 如果要将保留字用作变量
 year_2021
 year2021
 current_year_2021
@@ -52,7 +52,7 @@ num1
 num2
 ```
 
-Invalid variables names
+无效的变量名称
 
 ```shell
 first-name
@@ -62,14 +62,16 @@ num-1
 1num
 ```
 
-We will use standard Python variable naming style which has been adopted by many Python developers. Python developers use snake case(snake_case) variable naming convention. We use underscore character after each word for a variable containing more than one word(eg. first_name, last_name, engine_rotation_speed).  The example below is an example of standard naming of variables, underscore is required when the variable name is more than one word.
+我们将使用许多Python开发人员采用的标准Python变量命名样式。Python开发人员使用（snake_case）变量命名约定。对于包含多个单词的变量，我们在每个单词之后使用下划线字符（例如，first_name、last_name、engine_rotation_speed）。下面的示例是变量的标准命名示例，变量名包含多个单词时需要使用下划线。
 
-When we assign a certain data type to a variable, it is called variable declaration. For instance in the example below my first name is assigned to a variable first_name. The equal sign is an assignment operator. Assigning means storing data in the variable. The equal sign in Python is not equality as in Mathematics.
+>Python 也推荐使用驼峰式命名(camelCase)，那是在类名、Type 变量、异常 exception 名这些情况。而在**包名、模块名、方法名和普通变量名**等情况，则是推荐用蛇形命名
 
-_Example:_
+当我们将某种数据类型分配给变量时，称之为变量声明。例如，在下面的示例中，我的名字被分配给了变量first_name。等号是一个赋值运算符。分配意味着将数据存储在变量中。在Python中，等号不等同于数学中的等号。
+
+_示例：_
 
 ```py
-# Variables in Python
+# Python中的变量
 first_name = 'Asabeneh'
 last_name = 'Yetayeh'
 country = 'Finland'
@@ -85,22 +87,22 @@ person_info = {
    }
 ```
 
-Let us use the _print()_ and _len()_ built-in functions. Print function takes unlimited number of arguments. An argument is a value which we can be passed or put inside the function parenthesis, see the example below.
+让我们使用内置函数 _print()_ 和 _len()_。打印函数接受无限数量的参数。参数是可以传递或放入函数括号内的值，参见下面的示例。
 
-**Example:**
+**示例：**
 
 ```py
-print('Hello, World!') # The text Hello, World! is an argument
-print('Hello',',', 'World','!') # it can take multiple arguments, four arguments have been passed
-print(len('Hello, World!')) # it takes only one argument
+print('Hello, World!') # 文本Hello, World!是一个参数
+print('Hello',',', 'World','!') # 它可以接受多个参数，已传递了四个参数
+print(len('Hello, World!')) # 它只接受一个参数
 ```
 
-Let us print and also find the length of the variables declared at the top:
+让我们打印并查找在顶部声明的变量的长度：
 
-**Example:**
+**示例：**
 
 ```py
-# Printing the values stored in the variables
+# 打印存储在变量中的值
 
 print('First name:', first_name)
 print('First name length:', len(first_name))
@@ -114,11 +116,11 @@ print('Skills: ', skills)
 print('Person information: ', person_info)
 ```
 
-### Declaring Multiple Variable in a Line
+### 在一行中声明多个变量
 
-Multiple variables can also be declared in one line:
+多个变量也可以在一行中声明：
 
-**Example:**
+**示例：**
 
 ```py
 first_name, last_name, country, age, is_married = 'Asabeneh', 'Yetayeh', 'Helsink', 250, True
@@ -131,8 +133,8 @@ print('Age: ', age)
 print('Married: ', is_married)
 ```
 
-Getting user input using the _input()_ built-in function. Let us assign the data we get from a user into first_name and age variables.
-**Example:**
+使用内置的_input()_函数获取用户输入。让我们将从用户那里获取的数据分配给first_name和age变量。
+**示例：**
 
 ```py
 first_name = input('What is your name: ')
@@ -142,26 +144,26 @@ print(first_name)
 print(age)
 ```
 
-## Data Types
+## 数据类型
 
-There are several data types in Python. To identify the data type we use the _type_ built-in function. I would like to ask you to focus on understanding different data types very well. When it comes to programming, it is all about data types. I introduced data types at the very beginning and it comes again, because every topic is related to data types. We will cover data types in more detail in their respective sections.
+Python中有几种数据类型。要识别数据类型，我们使用_type_内置函数。我想请您专注于很好地理解不同的数据类型。在编程方面，一切都与数据类型有关。我在最初引入了数据类型，因为每个主题都与数据类型相关。我们将在各自的章节中更详细地介绍数据类型。
 
-## Checking Data types and Casting
+## 检查数据类型和强制类型转换
 
-- Check Data types: To check the data type of certain data/variable we use the _type_
-  **Example:**
+- 检查数据类型：要检查某个数据/变量的数据类型，我们使用_type_
+  **示例：**
 
 ```py
-# Different python data types
-# Let's declare variables with various data types
+# 不同的Python数据类型
+# 让我们声明具有各种数据类型的变量
 
 first_name = 'Asabeneh'     # str
 last_name = 'Yetayeh'       # str
 country = 'Finland'         # str
 city= 'Helsinki'            # str
-age = 250                   # int, it is not my real age, don't worry about it
+age = 250                   # int
 
-# Printing out types
+# 打印类型
 print(type('Asabeneh'))     # str
 print(type(first_name))     # str
 print(type(10))             # int
@@ -174,10 +176,10 @@ print(type((1,2)))                                              # tuple
 print(type(zip([1,2],[3,4])))                                   # set
 ```
 
-- Casting: Converting one data type to another data type. We use _int()_, _float()_, _str()_, _list_, _set_
-  When we do arithmetic operations string numbers should be first converted to int or float otherwise it will return an error. If we concatenate a number with a string, the number should be first converted to a string. We will talk about concatenation in String section.
+- 强制类型转换：将一种数据类型转换为另一种数据类型。我们使用_int()_、_float()_、_str()_、_list_、_set_
+  当我们执行字符串数字的算术运算时，应首先将字符串数字转换为int或float，否则会返回错误。如果我们将数字与字符串连接，那么数字应首先转换为字符串。我们将在字符串部分讨论连接。
 
-  **Example:**
+  **示例：**
 
 ```py
 # int to float
@@ -208,62 +210,59 @@ first_name_to_list = list(first_name)
 print(first_name_to_list)            # ['A', 's', 'a', 'b', 'e', 'n', 'e', 'h']
 ```
 
-## Numbers
+## 数字
 
-Number data types in Python:
+Python中的数字数据类型：
 
-1. Integers: Integer(negative, zero and positive) numbers
-   Example:
+1. 整数：整数（负数、零和正数）
+   示例：
    ... -3, -2, -1, 0, 1, 2, 3 ...
 
-2. Floating Point Numbers(Decimal numbers)
-   Example:
+2. 浮点数（小数）
+   示例：
    ... -3.5, -2.25, -1.0, 0.0, 1.1, 2.2, 3.5 ...
 
-3. Complex Numbers
-   Example:
+3. 复数
+   示例：
    1 + j, 2 + 4j, 1 - 1j
 
-🌕 You are awesome. You have just completed day 2 challenges and you are two steps ahead on your way to greatness. Now do some exercises for your brain and muscles.
+🌕 你很棒。您刚刚完成了第2天的挑战，距离伟大还有两步。现在为您的大脑和肌肉做一些练习。
 
-## 💻 Exercises - Day 2
+## 💻 练习 - 第2天
 
-### Exercises: Level 1
+### 练习：Level 1
 
-1. Inside 30DaysOfPython create a folder called day_2. Inside this folder create a file named variables.py
-2. Write a python comment saying 'Day 2: 30 Days of python programming'
-3. Declare a first name variable and assign a value to it
-4. Declare a last name variable and assign a value to it
-5. Declare a full name variable and assign a value to it
-6. Declare a country variable and assign a value to it
-7. Declare a city variable and assign a value to it
-8. Declare an age variable and assign a value to it
-9. Declare a year variable and assign a value to it
-10. Declare a variable is_married and assign a value to it
-11. Declare a variable is_true and assign a value to it
-12. Declare a variable is_light_on and assign a value to it
-13. Declare multiple variable on one line
+1. 在30DaysOfPython中创建一个名为day_2的文件夹。在此文件夹内创建一个名为variables.py的文件。
+2. 编写一个Python注释，写上'Day 2: 30 Days of Python programming'。
+3. 声明一个名为first_name的变量，并为其赋一个值。
+4. 声明一个名为last_name的变量，并为其赋一个值。
+5. 声明一个名为full_name的变量，并为其赋一个值。
+6. 声明一个名为country的变量，并为其赋一个值。
+7. 声明一个名为city的变量，并为其赋一个值。
+8. 声明一个名为age的变量，并为其赋一个值。
+9. 声明一个名为year的变量，并为其赋一个值。
+10. 声明一个名为is_married的变量，并为其赋一个值。
+11. 声明一个名为is_true的变量，并为其赋一个值。
+12. 声明一个名为is_light_on的变量，并为其赋一个值。
+13. 在一行中声明多个变量。
 
-### Exercises: Level 2
+### 练习：Level 2
 
-1. Check the data type of all your variables using type() built-in function
-1. Using the _len()_ built-in function, find the length of your first name
-1. Compare the length of your first name and your last name
-1. Declare 5 as num_one and 4 as num_two
-    1. Add num_one and num_two and assign the value to a variable total
-    2. Subtract num_two from num_one and assign the value to a variable diff
-    3. Multiply num_two and num_one and assign the value to a variable product
-    4. Divide num_one by num_two and assign the value to a variable division
-    5. Use modulus division to find num_two divided by num_one and assign the value to a variable remainder
-    6. Calculate num_one to the power of num_two and assign the value to a variable exp
-    7. Find floor division of num_one by num_two and assign the value to a variable floor_division
-1. The radius of a circle is 30 meters.
-    1. Calculate the area of a circle and assign the value to a variable name of _area_of_circle_
-    2. Calculate the circumference of a circle and assign the value to a variable name of _circum_of_circle_
-    3. Take radius as user input and calculate the area.
-1. Use the built-in input function to get first name, last name, country and age from a user and store the value to their corresponding variable names
-1. Run help('keywords') in Python shell or in your file to check for the Python reserved words or keywords
+1. 使用type()内置函数检查所有变量的数据类型。
+2. 使用_len()_内置函数，查找您的名字的长度。
+3. 比较您的名字的长度和您的姓氏的长度。
+4. 将5分别声明为num_one，4为num_two。
+   1. 将num_one和num_two相加，并将值赋给一个名为total的变量。
+   2. 从num_one中减去num_two，并将值赋给一个名为diff的变量。
+   3. 将num_two和num_one相乘，并将值赋给一个名为product的变量。
+   4. 将num_one除以num_two，并将值赋给一个名为division的变量。
+   5. 使用模运算找到num_two除以num_one的值，并将其赋给一个名为remainder的变量。
+   6. 计算num_one的num_two次方，并将值赋给一个名为exp的变量。
+   7. 找到num_one除以num_two的地板除法，并将值赋给一个名为floor_division的变量。
+5. 一个圆的半径是30米。
+   1. 计算圆的面积并将该值分配给变量名为 _area_of_circle_
+   2. 计算圆的周长并将该值分配给变量名为 _circum_of_circle_
+   3. 接受用户输入的半径并计算面积。
+6. 使用内置的 input 函数从用户那里获取名字、姓氏、国家和年龄，并将这些值存储到相应的变量名中。
+7. 在Python shell或您的文件中运行 help('keywords') 来检查Python的保留字或关键字。
 
-🎉 CONGRATULATIONS ! 🎉
-
-[<< Day 1](../readme.md) | [Day 3 >>](../03_Day_Operators/03_operators.md)
