@@ -468,7 +468,7 @@ print(challenge.startswith('thirty')) # False
 
 🌕 你是一个非凡的人，拥有卓越的潜力。 你刚刚完成了第4天的挑战，你已经走在了伟大之路上的四步。 现在，为你的大脑和肌肉做一些练习。
 
-## 💻 练习 - 第4天
+## 💻 练习
 
 1. 将字符串 'Thirty', 'Days', 'Of', 'Python' 连接为一个单一的字符串 'Thirty Days Of Python'。
 
