@@ -1,58 +1,21 @@
-<div align="center">
-  <h1> 30 Days Of Python: Day 8 - Dictionaries</h1>
-  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
-  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
-  </a>
-  <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
-  </a>
+# 08 字典
 
-<sub>Author:
-<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July, 2021</small>
-</sub>
+## 字典
 
-</div>
+字典是一种无序、可修改（可变）的键值对（key: value）数据类型的集合。
 
-[<< Day 7 ](../07_Day_Sets/07_sets.md) | [Day 9 >>](../09_Day_Conditionals/09_conditionals.md)
+### 创建字典
 
-![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
-
-- [📘 Day 8](#-day-8)
-  - [Dictionaries](#dictionaries)
-    - [Creating a Dictionary](#creating-a-dictionary)
-    - [Dictionary Length](#dictionary-length)
-    - [Accessing Dictionary Items](#accessing-dictionary-items)
-    - [Adding Items to a Dictionary](#adding-items-to-a-dictionary)
-    - [Modifying Items in a Dictionary](#modifying-items-in-a-dictionary)
-    - [Checking Keys in a Dictionary](#checking-keys-in-a-dictionary)
-    - [Removing Key and Value Pairs from a Dictionary](#removing-key-and-value-pairs-from-a-dictionary)
-    - [Changing Dictionary to a List of Items](#changing-dictionary-to-a-list-of-items)
-    - [Clearing a Dictionary](#clearing-a-dictionary)
-    - [Deleting a Dictionary](#deleting-a-dictionary)
-    - [Copy a Dictionary](#copy-a-dictionary)
-    - [Getting Dictionary Keys as a List](#getting-dictionary-keys-as-a-list)
-    - [Getting Dictionary Values as a List](#getting-dictionary-values-as-a-list)
-  - [💻 Exercises: Day 8](#-exercises-day-8)
-
-# 📘 Day 8
-
-## Dictionaries
-
-A dictionary is a collection of unordered, modifiable(mutable) paired (key: value) data type.
-
-### Creating a Dictionary
-
-To create a dictionary we use curly brackets, {} or the *dict()* built-in function.
+要创建一个字典，我们使用花括号 {} 或内置函数 *dict()*。
 
 ```py
-# syntax
+# 语法
 empty_dict = {}
-# Dictionary with data values
+# 带有数据值的字典
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 ```
 
-**Example:**
+**示例:**
 
 ```py
 person = {
@@ -60,7 +23,7 @@ person = {
     'last_name':'Yetayeh',
     'age':250,
     'country':'Finland',
-    'is_marred':True,
+    'is_married':True,
     'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
     'address':{
         'street':'Space street',
@@ -69,19 +32,19 @@ person = {
     }
 ```
 
-The dictionary above shows that a value could be any data types:string, boolean, list, tuple, set or a dictionary.
+上面的字典示例显示值可以是任何数据类型：字符串、布尔值、列表、元组、集合或字典。
 
-### Dictionary Length
+### 字典长度
 
-It checks the number of 'key: value' pairs in the dictionary.
+它检查字典中的 'key: value' 对的数量。
 
 ```py
-# syntax
+# 语法
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 print(len(dct)) # 4
 ```
 
-**Example:**
+**示例:**
 
 ```py
 person = {
@@ -89,7 +52,7 @@ person = {
     'last_name':'Yetayeh',
     'age':250,
     'country':'Finland',
-    'is_marred':True,
+    'is_married':True,
     'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
     'address':{
         'street':'Space street',
@@ -97,21 +60,20 @@ person = {
     }
     }
 print(len(person)) # 7
-
 ```
 
-### Accessing Dictionary Items
+### 访问字典项
 
-We can access Dictionary items by referring to its key name.
+我们可以通过引用其键名来访问字典项。
 
 ```py
-# syntax
+# 语法
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 print(dct['key1']) # value1
 print(dct['key4']) # value4
 ```
 
-**Example:**
+**示例:**
 
 ```py
 person = {
@@ -119,7 +81,7 @@ person = {
     'last_name':'Yetayeh',
     'age':250,
     'country':'Finland',
-    'is_marred':True,
+    'is_married':True,
     'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
     'address':{
         'street':'Space street',
@@ -131,17 +93,18 @@ print(person['country'])    # Finland
 print(person['skills'])     # ['JavaScript', 'React', 'Node', 'MongoDB', 'Python']
 print(person['skills'][0])  # JavaScript
 print(person['address']['street']) # Space street
-print(person['city'])       # Error
+print(person['city'])       # 错误
 ```
 
-Accessing an item by key name raises an error if the key does not exist. To avoid this error first we have to check if a key exist or we can use the _get_ method. The get method returns None, which is a NoneType object data type, if the key does not exist.
+通过键名访问项会在键不存在时引发错误。为了避免这种错误，首先我们必须检查键是否存在，或者我们可以使用 _get_ 方法。get 方法如果键不存在，则返回一个 None，这是一个 NoneType 对象数据类型。
+
 ```py
 person = {
     'first_name':'Asabeneh',
     'last_name':'Yetayeh',
     'age':250,
     'country':'Finland',
-    'is_marred':True,
+    'is_married':True,
     'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
     'address':{
         'street':'Space street',
@@ -154,17 +117,17 @@ print(person.get('skills')) #['HTML','CSS','JavaScript', 'React', 'Node', 'Mongo
 print(person.get('city'))   # None
 ```
 
-### Adding Items to a Dictionary
+### 向字典中添加项
 
-We can add new key and value pairs to a dictionary
+我们可以向字典中添加新的键值对
 
 ```py
-# syntax
+# 语法
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 dct['key5'] = 'value5'
 ```
 
-**Example:**
+**示例:**
 
 ```py
 person = {
@@ -172,7 +135,7 @@ person = {
     'last_name':'Yetayeh',
     'age':250,
     'country':'Finland',
-    'is_marred':True,
+    'is_married':True,
     'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
     'address':{
         'street':'Space street',
@@ -184,17 +147,17 @@ person['skills'].append('HTML')
 print(person)
 ```
 
-### Modifying Items in a Dictionary
+### 修改字典中的项
 
-We can modify items in a dictionary
+我们可以修改字典中的项
 
 ```py
-# syntax
+# 语法
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 dct['key1'] = 'value-one'
 ```
 
-**Example:**
+**示例:**
 
 ```py
 person = {
@@ -202,7 +165,7 @@ person = {
     'last_name':'Yetayeh',
     'age':250,
     'country':'Finland',
-    'is_marred':True,
+    'is_married':True,
     'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
     'address':{
         'street':'Space street',
@@ -213,33 +176,35 @@ person['first_name'] = 'Eyob'
 person['age'] = 252
 ```
 
-### Checking Keys in a Dictionary
+### 检查字典中的键
 
-We use the _in_ operator to check if a key exist in a dictionary
+我们使用 _in_ 运算符来检查字典中是否存在键
 
 ```py
-# syntax
+# 语法
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 print('key2' in dct) # True
 print('key5' in dct) # False
 ```
 
-### Removing Key and Value Pairs from a Dictionary
+### 从字典中删除键值对
 
-- _pop(key)_: removes the item with the specified key name:
-- _popitem()_: removes the last item
-- _del_: removes an item with specified key name
+- _pop(key)_: 移除具有指定键名的项
+- _popitem()_: 移除最后一个项
+- _del_: 移除具有指定键名的项
 
 ```py
-# syntax
+# 语法
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
-dct.pop('key1') # removes key1 item
+dct.pop('key1') # 移除 key1 项
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
-dct.popitem() # removes the last item
-del dct['key2'] # removes key2 item
+dct.popitem() # 移除最后一项
+
+
+del dct['key2'] # 移除 key2 项
 ```
 
-**Example:**
+**示例:**
 
 ```py
 person = {
@@ -247,96 +212,90 @@ person = {
     'last_name':'Yetayeh',
     'age':250,
     'country':'Finland',
-    'is_marred':True,
+    'is_married':True,
     'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
     'address':{
         'street':'Space street',
         'zipcode':'02210'
     }
     }
-person.pop('first_name')        # Removes the firstname item
-person.popitem()                # Removes the address item
-del person['is_married']        # Removes the is_married item
+person.pop('first_name')        # 移除 firstname 项
+person.popitem()                # 移除 address 项
+del person['is_married']        # 移除 is_married 项
 ```
 
-### Changing Dictionary to a List of Items
+### 将字典转换为项的列表
 
-The _items()_ method changes dictionary to a list of tuples.
+_items()_ 方法将字典转换为项的元组列表。
 
 ```py
-# syntax
+# 语法
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 print(dct.items()) # dict_items([('key1', 'value1'), ('key2', 'value2'), ('key3', 'value3'), ('key4', 'value4')])
 ```
 
-### Clearing a Dictionary
+### 清空字典
 
-If we don't want the items in a dictionary we can clear them using _clear()_ method
+如果我们不想要字典中的项，可以使用 _clear()_ 方法将其清空
 
 ```py
-# syntax
+# 语法
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 print(dct.clear()) # None
 ```
 
-### Deleting a Dictionary
+### 删除字典
 
-If we do not use the dictionary we can delete it completely
+如果我们不使用字典，可以完全删除它
 
 ```py
-# syntax
+# 语法
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 del dct
 ```
 
-### Copy a Dictionary
+### 复制字典
 
-We can copy a dictionary using a _copy()_ method. Using copy we can avoid mutation of the original dictionary.
+我们可以使用 _copy()_ 方法复制一个字典。使用复制，我们可以避免修改原始字典。
 
 ```py
-# syntax
+# 语法
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 dct_copy = dct.copy() # {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 ```
 
-### Getting Dictionary Keys as a List
+### 将字典的键作为列表获取
 
-The _keys()_ method gives us all the keys of a a dictionary as a list.
+_keys()_ 方法将字典的所有键作为列表返回。
 
 ```py
-# syntax
+# 语法
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 keys = dct.keys()
 print(keys)     # dict_keys(['key1', 'key2', 'key3', 'key4'])
 ```
 
-### Getting Dictionary Values as a List
+### 将字典的值作为列表获取
 
-The _values_ method gives us all the values of a a dictionary as a list.
+_values_ 方法将字典的所有值作为列表返回。
 
 ```py
-# syntax
+# 语法
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 values = dct.values()
 print(values)     # dict_values(['value1', 'value2', 'value3', 'value4'])
 ```
 
-🌕 You are astonishing. Now, you are super charged with the power of dictionaries. You have just completed day 8 challenges and you are 8 steps a head in to your way to greatness. Now do some exercises for your brain and  muscles.
+## 💻 练习: 第8天
 
-## 💻 Exercises: Day 8
-
-1. Create  an empty dictionary called dog
-2. Add name, color, breed, legs, age to the dog dictionary
-3. Create a student dictionary and add first_name, last_name, gender, age, marital status, skills, country, city and address as keys for the dictionary
-4. Get the length of the student dictionary
-5. Get the value of skills and check the data type, it should be a list
-6. Modify the skills values by adding one or two skills
-7. Get the dictionary keys as a list
-8. Get the dictionary values as a list
-9. Change the dictionary to a list of tuples using _items()_ method
-10. Delete one of the items in the dictionary
-11. Delete one of the dictionaries
-
-🎉 CONGRATULATIONS ! 🎉
-
-[<< Day 7 ](../07_Day_Sets/07_sets.md) | [Day 9 >>](../09_Day_Conditionals/09_conditionals.md)
+1. 创建一个名为 "dog" 的空字典。
+2. 向 "dog" 字典添加名字、颜色、品种、腿数和年龄等键值对。
+3. 创建一个名为 "student" 的字典，并添加 "first_name"、"last_name"、"gender"、"age"、"marital_status"、"skills"、"country"、"city" 和 "address" 作为键。
+4. 获取 "student" 字典的长度。
+5. 获取 "skills" 的值并检查其数据类型，应该是一个列表。
+6. 修改 "skills" 的值，添加一个或两个技能。
+7. 获取字典的键作为一个列表。
+8. 获取字典的值作为一个列表。
+9. 使用 _items()_ 方法将字典变为一个元组列表。
+10. 删除字典中的一项。
+11. 删除一个字典。
