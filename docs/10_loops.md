@@ -1,78 +1,44 @@
-<div align="center">
-  <h1> 30 Days Of Python: Day 10 - Loops</h1>
-  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
-  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
-  </a>
-  <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
-  </a>
+# 10 循环
 
-<sub>Author:
-<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July, 2021</small>
-</sub>
-</div>
+## 循环
 
-[<< Day 9](../09_Day_Conditionals/09_conditionals.md) | [Day 11 >>](../11_Day_Functions/11_functions.md)
+生活充满了日常工作routines。在编程中，我们也经常执行重复的任务。为了处理重复的任务，编程语言使用循环。Python编程语言也提供了以下两种类型的循环：
 
-![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
+1. while循环
+2. for循环
 
-- [📘 Day 10](#-day-10)
-  - [Loops](#loops)
-    - [While Loop](#while-loop)
-    - [Break and Continue - Part 1](#break-and-continue---part-1)
-    - [For Loop](#for-loop)
-    - [Break and Continue - Part 2](#break-and-continue---part-2)
-    - [The Range Function](#the-range-function)
-    - [Nested For Loop](#nested-for-loop)
-    - [For Else](#for-else)
-    - [Pass](#pass)
-  - [💻 Exercises: Day 10](#-exercises-day-10)
-    - [Exercises: Level 1](#exercises-level-1)
-    - [Exercises: Level 2](#exercises-level-2)
-    - [Exercises: Level 3](#exercises-level-3)
+### While循环
 
-# 📘 Day 10
-
-## Loops
-
-Life is full of routines. In programming we also do lots of repetitive tasks. In order to handle repetitive task programming languages use loops. Python programming language also provides the following types of two loops:
-
-1. while loop
-2. for loop
-
-### While Loop
-
-We use the reserved word _while_ to make a while loop. It is used to execute a block of statements repeatedly until a given condition is satisfied. When the condition becomes false, the lines of code after the loop will be continued to be executed.
+我们使用保留字 _while_ 来创建一个while循环。它用于重复执行一组语句，直到满足给定条件为止。当条件变为假时，循环后的代码行将继续执行。
 
 ```py
-  # syntax
-while condition:
-    code goes here
+  # 语法
+while 条件:
+    代码放在这里
 ```
 
-**Example:**
+**示例：**
 
 ```py
 count = 0
 while count < 5:
     print(count)
     count = count + 1
-#prints from 0 to 4
+#输出从0到4
 ```
 
-In the above while loop, the condition becomes false when count is 5. That is when the loop stops.
-If we are interested to run block of code once the condition is no longer true, we can use _else_.
+在上面的while循环中，当count为5时，条件变为假。这时循环停止。
+如果我们想要在条件不再为真时运行一段代码块，我们可以使用 _else_。
 
 ```py
-  # syntax
-while condition:
-    code goes here
+  # 语法
+while 条件:
+    代码放在这里
 else:
-    code goes here
+    代码放在这里
 ```
 
-**Example:**
+**示例：**
 
 ```py
 count = 0
@@ -83,22 +49,21 @@ else:
     print(count)
 ```
 
-The above loop condition will be false when count is 5 and the loop stops, and execution starts the else statement. As a result 5 will be printed.
+上面的循环条件在count为5时为假，循环停止，然后执行else语句。结果会打印出5。
 
+### Break和Continue - 第1部分
 
-### Break and Continue - Part 1
-
-- Break: We use break when we like to get out of or stop the loop.
+- Break：当我们想要退出或停止循环时，使用break。
 
 ```py
-# syntax
-while condition:
-    code goes here
-    if another_condition:
+# 语法
+while 条件:
+    代码放在这里
+    if 另一个条件:
         break
 ```
 
-**Example:**
+**示例：**
 
 ```py
 count = 0
@@ -109,19 +74,19 @@ while count < 5:
         break
 ```
 
-The above while loop only prints 0, 1, 2, but when it reaches 3 it stops.
+上面的while循环仅打印0、1、2，但当它达到3时会停止。
 
-- Continue: With the continue statement we can skip the current iteration, and continue with the next:
+- Continue：使用continue语句，我们可以跳过当前迭代，继续下一次迭代：
 
 ```py
-  # syntax
-while condition:
-    code goes here
-    if another_condition:
+  # 语法
+while 条件:
+    代码放在这里
+    if 另一个条件:
         continue
 ```
 
-**Example:**
+**示例：**
 
 ```py
 count = 0
@@ -133,37 +98,37 @@ while count < 5:
     count = count + 1
 ```
 
-The above while loop only prints 0, 1, 2 and 4 (skips 3).
+上面的while循环仅打印0、1、2和4（跳过3）。
 
-### For Loop
+### For循环
 
-A _for_ keyword is used to make a for loop, similar with other programming languages, but with some syntax differences. Loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string).
+使用 _for_ 关键字创建for循环，与其他编程语言类似，但有一些语法差异。循环用于迭代序列（可以是列表、元组、字典、集合或字符串）。
 
-- For loop with list
+- 带列表的for循环
 
 ```py
-# syntax
-for iterator in lst:
-    code goes here
+# 语法
+for 迭代器 in 列表:
+    代码放在这里
 ```
 
-**Example:**
+**示例：**
 
 ```py
 numbers = [0, 1, 2, 3, 4, 5]
-for number in numbers: # number is temporary name to refer to the list's items, valid only inside this loop
-    print(number)       # the numbers will be printed line by line, from 0 to 5
+for number in numbers: # number是用来引用列表项的临时名称，只在这个循环内部有效
+    print(number)       # 数字将逐行打印，从0到5
 ```
 
-- For loop with string
+- 带字符串的for循环
 
 ```py
-# syntax
-for iterator in string:
-    code goes here
+# 语法
+for 迭代器 in 字符串:
+    代码放在这里
 ```
 
-**Example:**
+**示例：**
 
 ```py
 language = 'Python'
@@ -175,15 +140,15 @@ for i in range(len(language)):
     print(language[i])
 ```
 
-- For loop with tuple
+- 带元组的for循环
 
 ```py
-# syntax
-for iterator in tpl:
-    code goes here
+# 语法
+for 迭代器 in 元组:
+    代码放在这里
 ```
 
-**Example:**
+**示例：**
 
 ```py
 numbers = (0, 1, 2, 3, 4, 5)
@@ -191,16 +156,16 @@ for number in numbers:
     print(number)
 ```
 
-- For loop with dictionary
-  Looping through a dictionary gives you the key of the dictionary.
+- 带字典的for循环
+  遍历字典会得到字典的键。
 
 ```py
-  # syntax
-for iterator in dct:
-    code goes here
+  # 语法
+for 迭代器 in 字典:
+    代码放在这里
 ```
 
-**Example:**
+**示例：**
 
 ```py
 person = {
@@ -219,18 +184,18 @@ for key in person:
     print(key)
 
 for key, value in person.items():
-    print(key, value) # this way we get both keys and values printed out
+    print(key, value) # 这样我们可以打印出键和值
 ```
 
-- Loops in set
+- 集合中的循环
 
 ```py
-# syntax
-for iterator in st:
-    code goes here
+# 语法
+for 迭代器 in 集合:
+    代码放在这里
 ```
 
-**Example:**
+**示例：**
 
 ```py
 it_companies = {'Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'}
@@ -238,20 +203,20 @@ for company in it_companies:
     print(company)
 ```
 
-### Break and Continue - Part 2
+### Break和Continue - 第2部分
 
-Short reminder:
-_Break_: We use break when we like to stop our loop before it is completed.
+简短的提醒：
+> 当我们想要在循环完成之前停止循环时，使用break。
 
 ```py
-# syntax
-for iterator in sequence:
-    code goes here
-    if condition:
+# 语法
+for 迭代器 in 序列:
+    代码放在这里
+    if 条件:
         break
 ```
 
-**Example:**
+**示例：**
 
 ```py
 numbers = (0,1,2,3,4,5)
@@ -261,41 +226,41 @@ for number in numbers:
         break
 ```
 
-In the above example, the loop stops when it reaches 3.
+在上面的示例中，当它达到3时，循环停止。
 
-Continue: We use continue when we like to skip some of the steps in the iteration of the loop.
+> 当我们想要在循环迭代中跳过某些步骤时，使用continue。
 
 ```py
-  # syntax
-for iterator in sequence:
-    code goes here
-    if condition:
+  # 语法
+for 迭代器 in 序列:
+    代码放在这里
+    if 条件:
         continue
 ```
 
-**Example:**
+**示例：**
 
 ```py
 numbers = (0,1,2,3,4,5)
 for number in numbers:
     print(number)
     if number == 3:
-        continue
-    print('Next number should be ', number + 1) if number != 5 else print("loop's end") # for short hand conditions need both if and else statements
-print('outside the loop')
+       continue
+    print('下一个数字应该是', number + 1) if number != 5 else print("循环结束") # 对于简写条件需要同时使用if和else语句
+print('循环外')
 ```
 
-In the example above, if the number equals 3, the step *after* the condition (but inside the loop) is skipped and the execution of the loop continues if there are any iterations left.
+在上面的示例中，如果数字等于3，那么在条件后的步骤（但在循环内）会被跳过，如果还有其他迭代，循环继续执行。
 
-### The Range Function
+### Range函数
 
-The _range()_ function is used list of numbers. The _range(start, end, step)_ takes three parameters: starting, ending and increment. By default it starts from 0 and the increment is 1. The range sequence needs at least 1 argument (end).
-Creating sequences using range
+_range()_ 函数用于生成一系列数字。_range(start, end, step)_ 接受三个参数：起始、结束和步进。默认情况下，它从0开始，步进为1。range序列至少需要一个参数（结束）。
+使用range创建序列
 
 ```py
 lst = list(range(11)) 
 print(lst) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-st = set(range(1, 11))    # 2 arguments indicate start and end of the sequence, step set to default 1
+st = set(range(1, 11))    # 2个参数表示序列的起始和结束，步长设置为默认值1
 print(st) # {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 
 lst = list(range(0,11,2))
@@ -305,29 +270,29 @@ print(st) #  {0, 2, 4, 6, 8, 10}
 ```
 
 ```py
-# syntax
-for iterator in range(start, end, step):
+# 语法
+for 迭代器 in range(起始, 结束, 步进):
 ```
 
-**Example:**
+**示例：**
 
 ```py
 for number in range(11):
-    print(number)   # prints 0 to 10, not including 11
+    print(number)   # 打印0到10，不包括11
 ```
 
-### Nested For Loop
+### 嵌套的For循环
 
-We can write loops inside a loop.
+我们可以在循环内部编写循环。
 
 ```py
-# syntax
+# 语法
 for x in y:
     for t in x:
         print(t)
 ```
 
-**Example:**
+**示例：**
 
 ```py
 person = {
@@ -350,45 +315,45 @@ for key in person:
 
 ### For Else
 
-If we want to execute some message when the loop ends, we use else.
+如果我们想在循环结束时执行一些消息，我们可以使用else。
 
 ```py
-# syntax
-for iterator in range(start, end, step):
-    do something
+# 语法
+for 迭代器 in range(起始, 结束, 步进):
+    做某事
 else:
-    print('The loop ended')
+    print('循环结束')
 ```
 
-**Example:**
+**示例：**
 
 ```py
 for number in range(11):
-    print(number)   # prints 0 to 10, not including 11
+    print(number)   # 打印0到10，不包括11
 else:
-    print('The loop stops at', number)
+    print('循环停在', number)
 ```
 
 ### Pass
 
-In python when statement is required (after semicolon), but we don't like to execute any code there, we can write the word _pass_ to avoid errors. Also we can use it as a placeholder, for future statements.
+在Python中，当需要语句（分号后）但我们不想执行任何代码时，我们可以写上单词 _pass_ 来避免错误。同时，我们可以将其用作未来语句的占位符。
 
-**Example:**
+**示例：**
 
 ```py
 for number in range(6):
     pass
 ```
 
-🌕 You established a big milestone, you are unstoppable. Keep going! You have just completed day 10 challenges and you are 10 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
+## 💻 练习：第10天
 
-## 💻 Exercises: Day 10
+### 练习：级别1
 
-### Exercises: Level 1
+1. 使用for循环迭代0到10，然后使用while循环执行相同的操作。
 
-1. Iterate 0 to 10 using for loop, do the same using while loop.
-2. Iterate 10 to 0 using for loop, do the same using while loop.
-3. Write a loop that makes seven calls to print(), so we get on the output the following triangle:
+2. 使用for循环迭代10到0，然后使用while循环执行相同的操作。
+
+3. 编写一个循环，调用七次print()，以便我们在输出中获得以下三角形：
 
    ```py
      #
@@ -400,7 +365,7 @@ for number in range(6):
      #######
    ```
 
-4. Use nested loops to create the following:
+4. 使用嵌套循环创建以下内容：
 
    ```sh
    # # # # # # # #
@@ -413,7 +378,7 @@ for number in range(6):
    # # # # # # # #
    ```
 
-5. Print the following pattern:
+5. 打印以下模式：
 
    ```sh
    0 x 0 = 0
@@ -429,33 +394,31 @@ for number in range(6):
    10 x 10 = 100
    ```
 
-6. Iterate through the list, ['Python', 'Numpy','Pandas','Django', 'Flask'] using a for loop and print out the items.
-7. Use for loop to iterate from 0 to 100 and print only even numbers
-8. Use for loop to iterate from 0 to 100 and print only odd numbers
-   
-### Exercises: Level 2
-    
-1.  Use for loop to iterate from 0 to 100 and print the sum of all numbers.
+6. 使用for循环迭代列表['Python', 'Numpy','Pandas','Django', 'Flask']，并打印出其中的项。
+
+7. 使用for循环迭代0到100，仅打印偶数。
+
+8. 使用for循环迭代0到100，仅打印奇数。
+
+### 练习：级别2
+
+1. 使用for循环迭代0到100，并打印所有数字的和。
 
    ```sh
-   The sum of all numbers is 5050.
+   所有数字的总和是5050。
    ```
 
-1. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
+2. 使用for循环迭代0到100，并打印所有偶数的和以及所有奇数的和。
 
-    ```sh
-    The sum of all evens is 2550. And the sum of all odds is 2500.
-    ```
+   ```sh
+   所有偶数的总和为2550。而所有奇数的总和为2500。
+   ```
 
-### Exercises: Level 3
+### 练习：级别3
 
-1. Go to the data folder and use the [countries.py](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries.py) file. Loop through the countries and extract all the countries containing the word _land_.
-1. This is a fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop.
-2. Go to the data folder and use the [countries_data.py](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries-data.py) file. 
-   1. What are the total number of languages in the data
-   2. Find the ten most spoken languages from the data
-   3. Find the 10 most populated countries in the world
-
-🎉 CONGRATULATIONS ! 🎉
-
-[<< Day 9](../09_Day_Conditionals/09_conditionals.md) | [Day 11 >>](../11_Day_Functions/11_functions.md)
+1. 进入data文件夹，使用[countries.py](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries.py)文件。循环遍历国家并提取所有包含单词 _land_ 的国家。
+2. 这是一个水果列表，['banana', 'orange', 'mango', 'lemon'] 使用循环反转顺序。
+3. 进入data文件夹，使用[countries_data.py](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries-data.py)文件。
+   1. 数据中有多少种语言
+   2. 从数据中找出使用最多的十种语言
+   3. 找出世界上人口最多的10个国家
