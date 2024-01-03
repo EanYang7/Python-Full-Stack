@@ -1,81 +1,43 @@
-<div align="center">
-  <h1> 30 Days Of Python: Day 11 - Functions</h1>
-  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
-  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
-  </a>
-  <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
-  </a>
+# 11 函数
 
-<sub>Author:
-<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July, 2021</small>
-</sub>
+## 函数
 
-</div>
+到目前为止，我们已经看到了许多内置的Python函数。在本节中，我们将关注自定义函数。什么是函数？在我们开始创建函数之前，让我们学习一下函数是什么以及为什么需要它们？
 
-[<< Day 10](../10_Day_Loops/10_loops.md) | [Day 12 >>](../12_Day_Modules/12_modules.md)
+### 定义函数
 
-![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
+函数是一块可重复使用的代码块或编程语句，旨在执行某个特定的任务。要定义或声明一个函数，Python提供了`def`关键字。以下是定义函数的语法。只有在调用或调用函数时，函数的代码块才会被执行。
 
-- [📘 Day 11](#-day-11)
-  - [Functions](#functions)
-    - [Defining a Function](#defining-a-function)
-    - [Declaring and Calling a Function](#declaring-and-calling-a-function)
-    - [Function without Parameters](#function-without-parameters)
-    - [Function Returning a Value - Part 1](#function-returning-a-value---part-1)
-    - [Function with Parameters](#function-with-parameters)
-    - [Passing Arguments with Key and Value](#passing-arguments-with-key-and-value)
-    - [Function Returning a Value - Part 2](#function-returning-a-value---part-2)
-    - [Function with Default Parameters](#function-with-default-parameters)
-    - [Arbitrary Number of Arguments](#arbitrary-number-of-arguments)
-    - [Default and Arbitrary Number of Parameters in Functions](#default-and-arbitrary-number-of-parameters-in-functions)
-    - [Function as a Parameter of Another Function](#function-as-a-parameter-of-another-function)
-  - [💻 Exercises: Day 11](#-exercises-day-11)
-    - [Exercises: Level 1](#exercises-level-1)
-    - [Exercises: Level 2](#exercises-level-2)
-    - [Exercises: Level 3](#exercises-level-3)
+### 声明和调用函数
 
-# 📘 Day 11
-
-## Functions
-
-So far we have seen many built-in Python functions. In this section, we will focus on custom functions. What is a function? Before we start making functions, let us learn what a function is and why we need them?
-
-### Defining a Function
-
-A function is a reusable block of code or programming statements designed to perform a certain task. To define or declare a function, Python provides the _def_ keyword. The following is the syntax for defining a function. The function block of code is executed only if the function is called or invoked.
-
-### Declaring and Calling a Function
-
-When we make a function, we call it declaring a function. When we start using the it,  we call it *calling* or *invoking* a function. Function can be declared with or without parameters.
+当我们创建一个函数时，我们称之为声明函数。当我们开始使用它时，我们称之为*调用(*calling/ *invoking*)函数。函数可以带参数或不带参数。
 
 ```py
-# syntax
-# Declaring a function
+# 语法
+# 声明一个函数
 def function_name():
-    codes
-    codes
-# Calling a function
+    代码
+    代码
+# 调用一个函数
 function_name()
 ```
 
-### Function without Parameters
+### 无参数的函数
 
-Function can be declared without parameters.
+函数可以在不带参数的情况下声明。
 
-**Example:**
+**示例：**
 
 ```py
-def generate_full_name ():
+def generate_full_name():
     first_name = 'Asabeneh'
     last_name = 'Yetayeh'
     space = ' '
     full_name = first_name + space + last_name
     print(full_name)
-generate_full_name () # calling a function
+generate_full_name() # 调用一个函数
 
-def add_two_numbers ():
+def add_two_numbers():
     num_one = 2
     num_two = 3
     total = num_one + num_two
@@ -83,12 +45,12 @@ def add_two_numbers ():
 add_two_numbers()
 ```
 
-### Function Returning a Value - Part 1
+### 有返回值的函数 - 第1部分
 
-Function can also return values, if a function does not have a return statement, the value of the function is None. Let us rewrite the above functions using return. From now on, we get a value from a function when we call the function and print it.
+函数也可以返回值，如果一个函数没有返回语句，函数的值就是None。现在，让我们使用return来重写上面的函数。从现在开始，我们在调用函数时从函数中获取一个值并打印它。
 
 ```py
-def generate_full_name ():
+def generate_full_name():
     first_name = 'Asabeneh'
     last_name = 'Yetayeh'
     space = ' '
@@ -96,7 +58,7 @@ def generate_full_name ():
     return full_name
 print(generate_full_name())
 
-def add_two_numbers ():
+def add_two_numbers():
     num_one = 2
     num_two = 3
     total = num_one + num_two
@@ -104,27 +66,27 @@ def add_two_numbers ():
 print(add_two_numbers())
 ```
 
-### Function with Parameters
+### 带参数的函数
 
-In a function we can pass different data types(number, string, boolean, list, tuple, dictionary or set) as a parameter
+在函数中，我们可以将不同的数据类型（数字、字符串、布尔值、列表、元组、字典或集合）作为参数传递
 
-- Single Parameter: If our function takes a parameter we should call our function with an argument
+- 单个参数：如果我们的函数带有参数，我们应该使用一个参数来调用我们的函数
 
 ```py
-  # syntax
-  # Declaring a function
+  # 语法
+  # 声明一个函数
   def function_name(parameter):
-    codes
-    codes
-  # Calling function
+    代码
+    代码
+  # 调用函数
   print(function_name(argument))
 ```
 
-**Example:**
+**示例：**
 
 ```py
-def greetings (name):
-    message = name + ', welcome to Python for Everyone!'
+def greetings(name):
+    message = name + '，欢迎来到Python for Everyone！'
     return message
 
 print(greetings('Asabeneh'))
@@ -138,7 +100,7 @@ def square_number(x):
     return x * x
 print(square_number(2))
 
-def area_of_circle (r):
+def area_of_circle(r):
     PI = 3.14
     area = PI * r ** 2
     return area
@@ -153,59 +115,59 @@ print(sum_of_numbers(10)) # 55
 print(sum_of_numbers(100)) # 5050
 ```
 
-- Two Parameter: A function may or may not have a parameter or parameters. A function may also have two or more parameters. If our function takes parameters we should call it with arguments. Let us check a function with two parameters:
+- 两个参数：一个函数可以有参数也可以没有参数。一个函数也可以有两个或更多的参数。如果我们的函数有参数，我们应该用参数来调用它。让我们看一个带有两个参数的函数：
 
 ```py
-  # syntax
-  # Declaring a function
+  # 语法
+  # 声明一个函数
   def function_name(para1, para2):
-    codes
-    codes
-  # Calling function
+    代码
+    代码
+  # 调用函数
   print(function_name(arg1, arg2))
 ```
 
-**Example:**
+**示例：**
 
 ```py
-def generate_full_name (first_name, last_name):
+def generate_full_name(first_name, last_name):
     space = ' '
-      full_name = first_name + space + last_name
-      return full_name
-print('Full Name: ', generate_full_name('Asabeneh','Yetayeh'))
+    full_name = first_name + space + last_name
+    return full_name
+print('全名：', generate_full_name('Asabeneh','Yetayeh'))
 
-def sum_two_numbers (num_one, num_two):
+def sum_two_numbers(num_one, num_two):
     sum = num_one + num_two
     return sum
-print('Sum of two numbers: ', sum_two_numbers(1, 9))
+print('两个数字的和：', sum_two_numbers(1, 9))
 
-def calculate_age (current_year, birth_year):
+def calculate_age(current_year, birth_year):
     age = current_year - birth_year
     return age;
 
-print('Age: ', calculate_age(2021, 1819))
+print('年龄：', calculate_age(2021, 1819))
 
-def weight_of_object (mass, gravity):
-    weight = str(mass * gravity)+ ' N' # the value has to be changed to a string first
+def weight_of_object(mass, gravity):
+    weight = str(mass * gravity)+ ' N' # 将值首先更改为字符串
     return weight
-print('Weight of an object in Newtons: ', weight_of_object(100, 9.81))
+print('牛顿下的物体重量：', weight_of_object(100, 9.81))
 ```
 
-### Passing Arguments with Key and Value
+### 使用键和值传递参数
 
-If we pass the arguments with key and value, the order of the arguments does not matter.
+如果我们使用键和值传递参数，参数的顺序就不重要了。
 
 ```py
-# syntax
-# Declaring a function
+# 语法
+# 声明一个函数
 def function_name(para1, para2):
-    codes
-    codes
-# Calling function
-print(function_name(para1 = 'John', para2 = 'Doe')) # the order of arguments does not matter here
+    代码
+    代码
+# 调用函数
+print(function_name(para1 = 'John', para2 = 'Doe')) # 参数的顺序在这里不重要
 ```
 
-**Example:**
+**示例：**
 
 ```py
 def print_fullname(firstname, lastname):
@@ -214,18 +176,18 @@ def print_fullname(firstname, lastname):
     print(full_name)
 print(print_fullname(firstname = 'Asabeneh', lastname = 'Yetayeh'))
 
-def add_two_numbers (num1, num2):
+def add_two_numbers(num1, num2):
     total = num1 + num2
     print(total)
-print(add_two_numbers(num2 = 3, num1 = 2)) # Order does not matter
+print(add_two_numbers(num2 = 3, num1 = 2)) # 顺序不重要
 ```
 
-### Function Returning a Value - Part 2
+### 有返回值的函数 - 第2部分
 
-If we do not return a value with a function, then our function is returning _None_ by default. To return a value with a function we use the keyword _return_ followed by the variable we are returning. We can return any kind of data types from a function.
+如果我们不使用函数返回值，那么默认情况下我们的函数将返回`None`。为了从函数中返回一个值，我们使用关键字`return`后跟我们要返回的变量。我们可以从函数中返回任何类型的数据。
 
-- Returning a string:
-**Example:**
+- 返回一个字符串：
+  **示例：**
 
 ```py
 def print_name(firstname):
@@ -239,37 +201,37 @@ def print_full_name(firstname, lastname):
 print_full_name(firstname='Asabeneh', lastname='Yetayeh')
 ```
 
-- Returning a number:
+- 返回一个数字:
 
-**Example:**
+**示例：**
 
 ```py
-def add_two_numbers (num1, num2):
+def add_two_numbers(num1, num2):
     total = num1 + num2
     return total
 print(add_two_numbers(2, 3))
 
-def calculate_age (current_year, birth_year):
+def calculate_age(current_year, birth_year):
     age = current_year - birth_year
     return age;
-print('Age: ', calculate_age(2019, 1819))
+print('年龄：', calculate_age(2019, 1819))
 ```
 
-- Returning a boolean:
-  **Example:**
+- 返回一个布尔值：
+  **示例：**
 
 ```py
-def is_even (n):
+def is_even(n):
     if n % 2 == 0:
-        print('even')
-        return True    # return stops further execution of the function, similar to break 
+        print('偶数')
+        return True    # return会停止函数的进一步执行，类似于break
     return False
 print(is_even(10)) # True
 print(is_even(7)) # False
 ```
 
-- Returning a list:
-  **Example:**
+- 返回一个列表：
+  **示例：**
 
 ```py
 def find_even_numbers(n):
@@ -281,31 +243,31 @@ def find_even_numbers(n):
 print(find_even_numbers(10))
 ```
 
-### Function with Default Parameters
+### 具有默认参数的函数
 
-Sometimes we pass default values to parameters, when we invoke the function. If we do not pass arguments when calling the function, their default values will be used.
+有时，当我们调用函数时，我们会传递默认值给参数。如果我们在调用函数时不传递参数，那么参数的默认值将被使用。
 
 ```py
-# syntax
-# Declaring a function
+# 语法
+# 声明一个函数
 def function_name(param = value):
-    codes
-    codes
-# Calling function
+    代码
+    代码
+# 调用函数
 function_name()
 function_name(arg)
 ```
 
-**Example:**
+**示例：**
 
 ```py
-def greetings (name = 'Peter'):
-    message = name + ', welcome to Python for Everyone!'
+def greetings(name = 'Peter'):
+    message = name + '，欢迎来到Python for Everyone！'
     return message
 print(greetings())
 print(greetings('Asabeneh'))
 
-def generate_full_name (first_name = 'Asabeneh', last_name = 'Yetayeh'):
+def generate_full_name(first_name = 'Asabeneh', last_name = 'Yetayeh'):
     space = ' '
     full_name = first_name + space + last_name
     return full_name
@@ -313,82 +275,86 @@ def generate_full_name (first_name = 'Asabeneh', last_name = 'Yetayeh'):
 print(generate_full_name())
 print(generate_full_name('David','Smith'))
 
-def calculate_age (birth_year,current_year = 2021):
+def calculate_age(birth_year, current_year = 2021):
     age = current_year - birth_year
     return age;
-print('Age: ', calculate_age(1821))
+print('年龄：', calculate_age(1821))
 
-def weight_of_object (mass, gravity = 9.81):
-    weight = str(mass * gravity)+ ' N' # the value has to be changed to string first
+def weight_of_object(mass, gravity = 9.81):
+    weight = str(mass * gravity)+ ' N' # 将值首先更改为字符串
     return weight
-print('Weight of an object in Newtons: ', weight_of_object(100)) # 9.81 - average gravity on Earth's surface
-print('Weight of an object in Newtons: ', weight_of_object(100, 1.62)) # gravity on the surface of the Moon
+print('牛顿下的物体重量：', weight_of_object(100)) # 9.81 - 地表上的平均重力
+print('牛顿下的物体重量：', weight_of_object(100, 1.62)) # 月球表面上的重力
 ```
 
-### Arbitrary Number of Arguments
+### 任意数量的参数
 
-If we do not know the number of arguments we pass to our function, we can create a function which can take arbitrary number of arguments by adding \* before the parameter name.
+如果我们不知道要传递给函数的参数数量，我们可以通过在参数名之前添加\*来创建一个可以接受任意数量参数的函数。
 
 ```py
-# syntax
-# Declaring a function
+# 语法
+# 声明一个函数
 def function_name(*args):
-    codes
-    codes
-# Calling function
+    代码
+    代码
+# 调用函数
 function_name(param1, param2, param3,..)
 ```
 
-**Example:**
+**示例：**
 
 ```py
 def sum_all_nums(*nums):
     total = 0
     for num in nums:
-        total += num     # same as total = total + num 
+        total += num     # 相当于 total = total + num
     return total
 print(sum_all_nums(2, 3, 5)) # 10
 ```
 
-### Default and Arbitrary Number of Parameters in Functions
+### 函数中的默认参数和任意数量的参数
 
 ```py
-def generate_groups (team,*args):
+def generate_groups(*args, team='Default Team'):
     print(team)
     for i in args:
         print(i)
-print(generate_groups('Team-1','Asabeneh','Brook','David','Eyob'))
+
+generate_groups('Asabeneh', 'Brook', 'David', 'Eyob')
 ```
 
-### Function as a Parameter of Another Function
+```
+Default Team
+Asabeneh
+Brook
+David
+Eyob
+```
+
+### 函数作为另一个函数的参数
 
 ```py
-#You can pass functions around as parameters
-def square_number (n):
+# 您可以将函数作为参数传递
+def square_number(n):
     return n * n
 def do_something(f, x):
     return f(x)
-print(do_something(square_number, 3)) # 27
+print(do_something(square_number, 3)) # 9
 ```
 
-🌕 You achieved quite a lot so far.  Keep going! You have just completed day 11 challenges and you are 11 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
+## 💻 练习：第11天
 
-## Testimony
-Now it is time to express your thoughts about the Author and 30DaysOfPython. You can leave your testimonial on this [link](https://testimonify.herokuapp.com/)
+### 练习：级别1
 
-## 💻 Exercises: Day 11
-
-### Exercises: Level 1
-
-1. Declare a function _add_two_numbers_. It takes two parameters and it returns a sum.
-2. Area of a circle is calculated as follows: area = π x r x r. Write a function that calculates _area_of_circle_.
-3. Write a function called add_all_nums which takes arbitrary number of arguments and sums all the arguments. Check if all the list items are number types. If not do give a reasonable feedback.
-4. Temperature in °C can be converted to °F using this formula: °F = (°C x 9/5) + 32. Write a function which converts °C to °F, _convert_celsius_to-fahrenheit_.
-5. Write a function called check-season, it takes a month parameter and returns the season: Autumn, Winter, Spring or Summer.
-6. Write a function called calculate_slope which return the slope of a linear equation
-7. Quadratic equation is calculated as follows: ax² + bx + c = 0. Write a function which calculates solution set of a quadratic equation, _solve_quadratic_eqn_.
-8. Declare a function named print_list. It takes a list as a parameter and it prints out each element of the list.
-9. Declare a function named reverse_list. It takes an array as a parameter and it returns the reverse of the array (use loops).
+1. 声明一个名为_add_two_numbers_的函数。它接受两个参数并返回它们的和。
+2. 圆的面积计算如下：面积 = π x r x r。编写一个计算_area_of_circle的函数。
+3. 编写一个名为add_all_nums的函数，它接受任意数量的参数并求它们的总和。检查列表中的所有项目是否都是数字类型。如果不是，请给出合理的反馈。
+4. 摄氏度可以使用以下公式转换为华氏度：°F = (°C x 9/5) + 32。编写一个将°C转换为°F的函数_convert_celsius_to_fahrenheit_。
+5. 编写一个名为check_season的函数，它接受一个月份参数并返回季节：秋季、冬季、春季或夏季。
+6. 编写一个名为calculate_slope的函数，它返回线性方程的斜率。
+7. 二次方程计算如下：ax² + bx + c = 0。编写一个计算二次方程解集的函数_solve_quadratic_eqn_。
+8. 声明一个名为print_list的函数。它接受一个列表作为参数，并打印出列表的每个元素。
+9. 声明一个名为reverse_list的函数。它接受一个数组作为参数，并返回数组的反转版本（使用循环）。
 
 ```py
 print(reverse_list([1, 2, 3, 4, 5]))
@@ -397,8 +363,8 @@ print(reverse_list1(["A", "B", "C"]))
 # ["C", "B", "A"]
 ```
 
-10. Declare a function named capitalize_list_items. It takes a list as a parameter and it returns a capitalized list of items
-11. Declare a function named add_item. It takes a list and an item parameters. It returns a list with the item added at the end.
+10. 声明一个名为capitalize_list_items的函数。它接受一个列表作为参数，并返回首字母大写的项目列表。
+11. 声明一个名为add_item的函数。它接受一个列表和一个项目作为参数。它返回一个在列表末尾添加了项目的列表。
 
 ```py
 food_staff = ['Potato', 'Tomato', 'Mango', 'Milk'];
@@ -407,7 +373,7 @@ numbers = [2, 3, 7, 9];
 print(add_item(numbers, 5))      [2, 3, 7, 9, 5]
 ```
 
-12. Declare a function named remove_item. It takes a list and an item parameters. It returns a list with the item removed from it.
+12. 声明一个名为remove_item的函数。它接受一个列表和一个项目作为参数。它返回一个从中删除了项目的列表。
 
 ```py
 food_staff = ['Potato', 'Tomato', 'Mango', 'Milk'];
@@ -416,7 +382,7 @@ numbers = [2, 3, 7, 9];
 print(remove_item(numbers, 3))  # [2, 7, 9]
 ```
 
-13. Declare a function named sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.
+13. 声明一个名为sum_of_numbers的函数。它接受一个数字参数并将该范围内的所有数字相加。
 
 ```py
 print(sum_of_numbers(5))  # 15
@@ -424,34 +390,30 @@ print(sum_all_numbers(10)) # 55
 print(sum_all_numbers(100)) # 5050
 ```
 
-14. Declare a function named sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range.
-15. Declare a function named sum_of_even. It takes a number parameter and it adds all the even numbers in that - range.
+14. 声明一个名为sum_of_odds的函数。它接受一个数字参数并将该范围内的所有奇数相加。
+15. 声明一个名为sum_of_even的函数。它接受一个数字参数并将该范围内的所有偶数相加。
 
-### Exercises: Level 2
+### 练习：级别2
 
-1.  Declare a function named evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+1. 声明一个名为evens_and_odds的函数。它接受一个正整数作为参数，并统计数字中的偶数和奇数个数。
 
 ```py
     print(evens_and_odds(100))
-    # The number of odds are 50.
-    # The number of evens are 51.
+    # 奇数的数量为50。
+    # 偶数的数量为51。
 ```
 
-1. Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
-1. Call your function _is_empty_, it takes a parameter and it checks if it is empty or not
-1. Write different functions which take lists. They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
+2. 调用您的函数factorial，它接受一个整数作为参数，并返回该数字的阶乘。
+3. 调用您的函数_is_empty_，它接受一个参数并检查它是否为空。
+4. 编写不同的函数，它们接受列表作为参数。它们应该计算均值、中位数、众数、范围、方差和标准差。
 
-### Exercises: Level 3
+### 练习：级别3
 
-1. Write a function called is_prime, which checks if a number is prime.
-1. Write a functions which checks if all items are unique in the list.
-1. Write a function which checks if all the items of the list are of the same data type.
-1. Write a function which check if provided variable is a valid python variable
-1. Go to the data folder and access the countries-data.py file.
+1. 编写一个名为is_prime的函数，它检查一个数是否为质数。
+2. 编写一个函数，检查列表中的所有项目是否都是唯一的。
+3. 编写一个函数，检查列表中的所有项目是否都属于相同的数据类型。
+4. 编写一个函数，检查提供的变量是否是有效的Python变量。
+5. 转到数据文件夹并访问countries-data.py文件。
 
-- Create a function called the most_spoken_languages in the world. It should return 10 or 20 most spoken languages in the world in descending order
-- Create a function called the most_populated_countries. It should return 10 or 20 most populated countries in descending order.
-
-🎉 CONGRATULATIONS ! 🎉
-
-[<< Day 10](../10_Day_Loops/10_loops.md) | [Day 12 >>](../12_Day_Modules/12_modules.md)
+- 创建一个名为most_spoken_languages_in_the_world的函数。它应返回世界上最常用的10或20种语言，按降序排列。
+- 创建一个名为most_populated_countries的函数。它应返回世界上最多人口的10或20个国家，按降序排列。
