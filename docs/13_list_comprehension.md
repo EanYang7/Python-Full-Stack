@@ -1,174 +1,147 @@
-<div align="center">
-  <h1> 30 Days Of Python: Day 13 - List Comprehension</h1>
-  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
-  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
-  </a>
-  <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
-  </a>
+# 13 列表推导式
 
-<sub>Author:
-<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July, 2021</small>
-</sub>
+## 列表推导式
 
-</div>
-</div>
-
-[<< Day 12](../12_Day_Modules/12_modules.md) | [Day 14>>](../14_Day_Higher_order_functions/14_higher_order_functions.md)
-
-![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
-
-- [📘 Day 13](#-day-13)
-  - [List Comprehension](#list-comprehension)
-  - [Lambda Function](#lambda-function)
-    - [Creating a Lambda Function](#creating-a-lambda-function)
-    - [Lambda Function Inside Another Function](#lambda-function-inside-another-function)
-  - [💻 Exercises: Day 13](#-exercises-day-13)
-
-# 📘 Day 13
-
-## List Comprehension
-
-List comprehension in Python is a compact way of creating a list from a sequence. It is a short way to create a new list. List comprehension is considerably faster than processing a list using the _for_ loop.
+在Python中，列表推导是一种从序列中创建列表的简洁方法。它是创建新列表的一种简便方式。列表推导在性能上比使用`for`循环处理列表要快得多。
 
 ```py
-# syntax
+# 语法
 [i for i in iterable if expression]
 ```
 
-**Example:1**
+**示例1**
 
-For instance if you want to change a string to a list of characters. You can use a couple of methods. Let's see some of them:
+例如，如果您想将字符串更改为字符列表，可以使用一些方法。让我们看看其中一些：
 
 ```py
-# One way
+# 一种方式
 language = 'Python'
-lst = list(language) # changing the string to list
-print(type(lst))     # list
+lst = list(language) # 将字符串更改为列表
+print(type(lst))     # 列表
 print(lst)           # ['P', 'y', 't', 'h', 'o', 'n']
 
-# Second way: list comprehension
+# 第二种方式：列表推导
 lst = [i for i in language]
-print(type(lst)) # list
+print(type(lst)) # 列表
 print(lst)       # ['P', 'y', 't', 'h', 'o', 'n']
 
 ```
 
-**Example:2**
+**示例2**
 
-For instance if you want to generate a list of numbers
+例如，如果您想生成一个数字列表
 
 ```py
-# Generating numbers
-numbers = [i for i in range(11)]  # to generate numbers from 0 to 10
+# 生成数字
+numbers = [i for i in range(11)]  # 生成0到10的数字
 print(numbers)                    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-# It is possible to do mathematical operations during iteration
+# 在迭代过程中执行数学运算也是可能的
 squares = [i * i for i in range(11)]
 print(squares)                    # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
-# It is also possible to make a list of tuples
+# 也可以创建一个元组列表
 numbers = [(i, i * i) for i in range(11)]
 print(numbers)                             # [(0, 0), (1, 1), (2, 4), (3, 9), (4, 16), (5, 25)]
 
 ```
 
-**Example:2**
+**示例2**
 
-List comprehension can be combined with if expression
+列表推导可以与if表达式结合使用
 
 
 ```py
-# Generating even numbers
-even_numbers = [i for i in range(21) if i % 2 == 0]  # to generate even numbers list in range 0 to 21
+# 生成偶数
+even_numbers = [i for i in range(21) if i % 2 == 0]  # 生成0到21范围内的偶数列表
 print(even_numbers)                    # [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 
-# Generating odd numbers
-odd_numbers = [i for i in range(21) if i % 2 != 0]  # to generate odd numbers in range 0 to 21
+# 生成奇数
+odd_numbers = [i for i in range(21) if i % 2 != 0]  # 生成0到21范围内的奇数
 print(odd_numbers)                      # [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
-# Filter numbers: let's filter out positive even numbers from the list below
+# 过滤数字：让我们从以下列表中过滤出正偶数
 numbers = [-8, -7, -3, -1, 0, 1, 3, 4, 5, 7, 6, 8, 10]
 positive_even_numbers = [i for i in range(21) if i % 2 == 0 and i > 0]
 print(positive_even_numbers)                    # [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 
-# Flattening a three dimensional array
+# 展平三维数组
 list_of_lists = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 flattened_list = [ number for row in list_of_lists for number in row]
 print(flattened_list)    # [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-## Lambda Function
+## Lambda函数
 
-Lambda function is a small anonymous function without a name. It can take any number of arguments, but can only have one expression. Lambda function is similar to anonymous functions in JavaScript. We need it when we want to write an anonymous function inside another function.
+Lambda函数是一种没有名称的小型匿名函数。它可以接受任意数量的参数，但只能有一个表达式。Lambda函数类似于JavaScript中的匿名函数。当我们想要在另一个函数内部编写匿名函数时，就需要使用它。
 
-### Creating a Lambda Function
+### 创建Lambda函数
 
-To create a lambda function we use _lambda_ keyword followed by a parameter(s), followed by an expression. See the syntax and the example below. Lambda function does not use return but it explicitly returns the expression.
+要创建lambda函数，我们使用`lambda`关键字，后面跟参数（s），然后是一个表达式。请参阅下面的语法和示例。Lambda函数不使用`return`，但它显式返回表达式。
 
 ```py
-# syntax
+# 语法
 x = lambda param1, param2, param3: param1 + param2 + param2
 print(x(arg1, arg2, arg3))
 ```
 
-**Example:**
+**示例:**
 
 ```py
-# Named function
+# 命名函数
 def add_two_nums(a, b):
     return a + b
 
 print(add_two_nums(2, 3))     # 5
-# Lets change the above function to a lambda function
+# 让我们将上述函数更改为lambda函数
 add_two_nums = lambda a, b: a + b
 print(add_two_nums(2,3))    # 5
 
-# Self invoking lambda function
-(lambda a, b: a + b)(2,3) # 5 - need to encapsulate it in print() to see the result in the console
+# 自调用Self invoking lambda函数
+(lambda a, b: a + b)(2,3) # 5 - 需要将其封装在print()中以在控制台中查看结果
 
 square = lambda x : x ** 2
 print(square(3))    # 9
 cube = lambda x : x ** 3
 print(cube(3))    # 27
 
-# Multiple variables
+# 多个变量
 multiple_variable = lambda a, b, c: a ** 2 - 3 * b + 4 * c
 print(multiple_variable(5, 5, 3)) # 22
 ```
 
-### Lambda Function Inside Another Function
+### 在另一个函数内使用Lambda函数
 
-Using a lambda function inside another function.
+在另一个函数内使用lambda函数。
 
 ```py
 def power(x):
     return lambda n : x ** n
 
-cube = power(2)(3)   # function power now need 2 arguments to run, in separate rounded brackets
+cube = power(2)(3)   # 现在函数power需要2个参数才能运行，在不同的圆括号中
 print(cube)          # 8
 two_power_of_five = power(2)(5) 
 print(two_power_of_five)  # 32
 ```
 
-🌕 Keep up the good work. Keep the momentum going, the sky is the limit! You have just completed day 13 challenges and you are 13 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
+## 💻 练习：第13天
 
-## 💻 Exercises: Day 13
+1. 使用列表推导仅过滤列表中的负数和零
 
-1. Filter only negative and zero in the list using list comprehension
    ```py
    numbers = [-4, -3, -2, -1, 0, 2, 4, 6]
    ```
-2. Flatten the following list of lists of lists to a one dimensional list :
+
+2. 将以下列表的列表的列表展平为一维列表：
 
    ```py
    list_of_lists =[[[1, 2, 3]], [[4, 5, 6]], [[7, 8, 9]]]
-
-   output
+   
+   输出
    [1, 2, 3, 4, 5, 6, 7, 8, 9]
    ```
 
-3. Using list comprehension create the following list of tuples:
+3. 使用列表推导创建以下元组的列表：
+
    ```py
    [(0, 1, 0, 0, 0, 0, 0),
    (1, 1, 1, 1, 1, 1, 1),
@@ -182,28 +155,31 @@ print(two_power_of_five)  # 32
    (9, 1, 9, 81, 729, 6561, 59049),
    (10, 1, 10, 100, 1000, 10000, 100000)]
    ```
-4. Flatten the following list to a new list:
+
+4. 将以下列表展平为一个新列表：
+
    ```py
    countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
-   output:
+   输出:
    [['FINLAND','FIN', 'HELSINKI'], ['SWEDEN', 'SWE', 'STOCKHOLM'], ['NORWAY', 'NOR', 'OSLO']]
    ```
-5. Change the following list to a list of dictionaries:
+
+5. 将以下列表更改为字典列表：
+
    ```py
    countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
-   output:
+   输出:
    [{'country': 'FINLAND', 'city': 'HELSINKI'},
    {'country': 'SWEDEN', 'city': 'STOCKHOLM'},
    {'country': 'NORWAY', 'city': 'OSLO'}]
    ```
-6. Change the following list of lists to a list of concatenated strings:
+
+6. 将以下列表的列表更改为连接的字符串列表：
+
    ```py
    names = [[('Asabeneh', 'Yetayeh')], [('David', 'Smith')], [('Donald', 'Trump')], [('Bill', 'Gates')]]
-   output
+   输出
    ['Asabeneh Yetaeyeh', 'David Smith', 'Donald Trump', 'Bill Gates']
    ```
-7. Write a lambda function which can solve a slope or y-intercept of linear functions.
 
-🎉 CONGRATULATIONS ! 🎉
-
-[<< Day 12](../12_Day_Modules/12_modules.md) | [Day 14>>](../14_Day_Higher_order_functions/14_higher_order_functions.md)
+7. 编写一个能够解决线性函数的斜率或y截距的lambda函数。
