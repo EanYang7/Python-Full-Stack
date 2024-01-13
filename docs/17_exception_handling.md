@@ -8,7 +8,7 @@ Python 使用 _try_ 和 _except_ 来优雅地处理错误。优雅地处理错�
 
 我们在前一节中介绍了不同的 Python _error_ 类型。如果在我们的程序中使用 _try_ 和 _except_，那么它不会在这些块中引发错误。
 
-![尝试和捕获](./17_exception_handling - Copy.assets/try_except.png)
+![尝试和捕获](./images/try_except.png)
 
 ```py
 try:
