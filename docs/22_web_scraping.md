@@ -1,75 +1,50 @@
-<div align="center">
-  <h1> 30 Days Of Python: Day 22 - Web Scraping </h1>
-  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
-  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
-  </a>
-  <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
-  </a>
+# 22 网络爬虫
 
-<sub>Author:
-<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July, 2021</small>
-</sub>
-</div>
+## Web爬取
 
-[<< Day 21](../21_Day_Classes_and_objects/21_classes_and_objects.md) | [Day 23 >>](../23_Day_Virtual_environment/23_virtual_environment.md)
+### 什么是网络爬虫
 
-![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
+互联网上充满了大量的数据，可以用于不同的目的。为了收集这些数据，我们需要知道如何从网站上抓取数据。
 
-- [📘 Day 22](#-day-22)
-  - [Python Web Scraping](#python-web-scraping)
-    - [What is Web Scrapping](#what-is-web-scrapping)
-  - [💻 Exercises: Day 22](#-exercises-day-22)
+Web爬取是从网站上提取和收集数据并将其存储在本地计算机或数据库中的过程。
 
-# 📘 Day 22
+在这一部分中，我们将使用beautifulsoup和requests包来进行数据抓取。我们使用的包版本是beautifulsoup 4。
 
-## Python Web Scraping
-
-### What is Web Scrapping
-
-The internet is full of huge amount of data which can be used for different purposes. To collect this data we need to know how to scrape data from a website.
-
-Web scraping is the process of extracting and collecting data from websites and storing it on a local machine or in a database.
-
-In this section, we will use beautifulsoup and requests package to scrape data. The package version we are using is beautifulsoup 4.
-
-To start scraping websites you need _requests_, _beautifoulSoup4_ and a _website_.
+要开始从网站上抓取数据，您需要 _requests_，_beautifulsoup4_ 和一个 _网站_。
 
 ```sh
 pip install requests
 pip install beautifulsoup4
 ```
 
-To scrape data from websites, basic understanding of HTML tags and CSS selectors is needed. We target content from a website using HTML tags, classes or/and ids.
-Let us import the requests and BeautifulSoup module
+要从网站上抓取数据，需要基本了解HTML标记和CSS选择器。我们使用HTML标记、class类/id来定位网站上的内容。
+让我们导入requests和BeautifulSoup模块
 
 ```py
 import requests
 from bs4 import BeautifulSoup
 ```
 
-Let us declare url variable for the website which we are going to scrape.
+让我们为要抓取的网站声明url变量。
 
 ```py
-
 import requests
 from bs4 import BeautifulSoup
 url = 'https://archive.ics.uci.edu/ml/datasets.php'
 
-# Lets use the requests get method to fetch the data from url
+# 让我们使用requests的get方法来从url获取数据
 
 response = requests.get(url)
-# lets check the status
+# 检查状态
 status = response.status_code
-print(status) # 200 means the fetching was successful
+print(status) # 200表示获取成功
 ```
 
 ```sh
 200
 ```
 
-Using beautifulSoup to parse content from the page
+使用beautifulSoup来解析页面中的内容
 
 ```py
 import requests
@@ -77,32 +52,27 @@ from bs4 import BeautifulSoup
 url = 'https://archive.ics.uci.edu/ml/datasets.php'
 
 response = requests.get(url)
-content = response.content # we get all the content from the website
-soup = BeautifulSoup(content, 'html.parser') # beautiful soup will give a chance to parse
+content = response.content # 获取网站上的所有内容
+soup = BeautifulSoup(content, 'html.parser') # beautiful soup将会给我们一个解析的机会
 print(soup.title) # <title>UCI Machine Learning Repository: Data Sets</title>
 print(soup.title.get_text()) # UCI Machine Learning Repository: Data Sets
-print(soup.body) # gives the whole page on the website
+print(soup.body) # 给出了整个网站的页面
 print(response.status_code)
 
 tables = soup.find_all('table', {'cellpadding':'3'})
-# We are targeting the table with cellpadding attribute with the value of 3
-# We can select using id, class or HTML tag , for more information check the beautifulsoup doc
-table = tables[0] # the result is a list, we are taking out data from it
+# 我们定位了具有cellpadding属性值为3的表格
+# 我们可以使用id、class或HTML标记来选择，更多信息请查看beautifulsoup文档
+table = tables[0] # 结果是一个列表，我们从中取出数据
 for td in table.find('tr').find_all('td'):
     print(td.text)
 ```
 
-If you run this code, you can see that the extraction is half done. You can continue doing it because it is part of exercise 1.
-For reference check the [beautifulsoup documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#quick-start)
+如果您运行这段代码，您会看到提取只完成了一半。您可以继续进行，因为这是练习1的一部分。
+有关参考，请查看[beautifulsoup文档](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#quick-start)
 
-🌕 You are so special, you are progressing everyday. You are left with only eight days to your way to greatness. Now do some exercises for your brain and muscles.
+## 💻 练习：第22天
 
-## 💻 Exercises: Day 22
+1. 抓取以下网站的数据并将其存储为json文件（url = 'http://www.bu.edu/president/boston-university-facts-stats/'）。
+2. 提取此网址中的表格（https://archive.ics.uci.edu/ml/datasets.php）并将其更改为json文件。
+3. 抓取总统表格的数据并将其存储为json（https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States）。该表格结构不太规整，抓取可能需要很长时间。
 
-1. Scrape the following website and store the data as json file(url = 'http://www.bu.edu/president/boston-university-facts-stats/').
-1. Extract the table in this url (https://archive.ics.uci.edu/ml/datasets.php) and change it to a json file
-2. Scrape the presidents table and store the data as json(https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States). The table is not very structured and the scrapping may take very long time.
-
-🎉 CONGRATULATIONS ! 🎉
-
-[<< Day 21](../21_Day_Web_scraping/21_class_and_object.md) | [Day 23 >>](../23_Day_Virtual_environment/23_virtual_environment.md)
