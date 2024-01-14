@@ -79,6 +79,7 @@ extra:
 copyright: Copyright &copy; 2023 Ean Yang
 
 plugins:
+  - glightbox
   - search:
       separator: '[\s\u200b\-]'
   - git-revision-date-localized:
@@ -98,9 +99,3 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.details
-
-# nav:
-#   - 主页: index.md
-#   - 示例:
-#     - 示例1: demo/demo1.md
-#     - 示例2: demo/demo2.md
