@@ -1,0 +1,1852 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Python-Full-Stack">
+      
+      
+        <meta name="author" content="Ean Yang">
+      
+      
+        <link rel="canonical" href="https://eanyang7.github.io/Python-Full-Stack/01_Introduction/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../02_variables_builtin_functions/">
+      
+      
+      <link rel="icon" href="../assets/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>01 介绍 - 30天入门Python全栈开发</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#01" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="30天入门Python全栈开发" class="md-header__button md-logo" aria-label="30天入门Python全栈开发" data-md-component="logo">
+      
+  <img src="../assets/logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            30天入门Python全栈开发
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              01 介绍
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="deep-purple"  aria-label="切换为暗黑模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换为暗黑模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="red"  aria-label="切换为浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换为浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/EanYang7/Python-Full-Stack" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    github仓库
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="30天入门Python全栈开发" class="md-nav__button md-logo" aria-label="30天入门Python全栈开发" data-md-component="logo">
+      
+  <img src="../assets/logo.jpg" alt="logo">
+
+    </a>
+    30天入门Python全栈开发
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/EanYang7/Python-Full-Stack" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    github仓库
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    01 介绍
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    01 介绍
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      为什么选择Python？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      环境设置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="环境设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装Python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Shell
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装Visual Studio Code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安装Visual Studio Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visual-studio-code_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何使用Visual Studio Code
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python语法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python缩进
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      注释
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据类型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      数字
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      字符串
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      布尔值
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      列表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      字典
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      元组
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      集合
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      检查数据类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python文件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 练习
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💻 练习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#level-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      练习：Level 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#level-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      练习：Level 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#level-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      练习：Level 3
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_variables_builtin_functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02 变量，内置函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_operators/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03 运算符
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_strings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04 字符串
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_lists/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05 列表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_tuples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06 元组
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07 集合
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_dictionaries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08 字典
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_conditionals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    09 条件语句
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_loops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10 循环
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11 函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12_modules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12 模块
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13_list_comprehension/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13 列表推导式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14_higher_order_functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14 高阶函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15_python_type_errors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15 错误类型
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16_python_datetime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16 datetime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17_exception_handling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17 异常处理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18_regular_expressions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18 正则表达式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19_file_handling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19 文件处理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20_package_manager/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20 包管理器-pip
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21_classes_and_objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21 类和对象
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22_web_scraping/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22 web scraping
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23_virtual_environment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23 virtual environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24_statistics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24 statistics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25_pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    25 pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26_python_web/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    26 python web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27_python_with_mongodb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    27 python with mongodb
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28_API/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    28 API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../29_building_API/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    29 building API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30_conclusions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    30 conclusions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      为什么选择Python？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      环境设置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="环境设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装Python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Shell
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装Visual Studio Code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安装Visual Studio Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visual-studio-code_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何使用Visual Studio Code
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python语法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python缩进
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      注释
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据类型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      数字
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      字符串
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      布尔值
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      列表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      字典
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      元组
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      集合
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      检查数据类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python文件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 练习
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💻 练习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#level-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      练习：Level 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#level-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      练习：Level 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#level-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      练习：Level 3
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/EanYang7/Python-Full-Stack/tree/main/docs/01_Introduction.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/EanYang7/Python-Full-Stack/tree/main/docs/01_Introduction.md" title="查看本页的源代码" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
+    </a>
+  
+
+
+<h1 id="01">01 介绍<a class="headerlink" href="#01" title="Permanent link">⚓︎</a></h1>
+<p>Python 是一种用于通用编程的高级编程语言。它是一种开源、解释型、面向对象的编程语言。Python 是由荷兰程序员Guido van Rossum创建的。Python编程语言的名称取自英国的一个喜剧系列，<em>Monty Python's Flying Circus</em>。第一个版本于1991年2月20日发布。</p>
+<h2 id="python">为什么选择Python？<a class="headerlink" href="#python" title="Permanent link">⚓︎</a></h2>
+<p>它是一种非常接近人类语言的编程语言，因此易于学习和使用。
+Python被各个行业和公司（包括Google）使用。它已经被用于开发Web应用程序、桌面应用程序、系统管理和机器学习库。Python在数据科学和机器学习社区中得到了高度的接受。我希望这足以说服您开始学习Python。Python正在吞噬这个世界，您可以在它吞噬您之前击败它。</p>
+<h2 id="_1">环境设置<a class="headerlink" href="#_1" title="Permanent link">⚓︎</a></h2>
+<h3 id="python_1">安装Python<a class="headerlink" href="#python_1" title="Permanent link">⚓︎</a></h3>
+<p>要运行Python脚本，您需要安装Python。让我们<a href="https://www.python.org/">下载</a> Python。
+如果您是Windows用户，请点击红色圈中的按钮。</p>
+<p><a href="https://www.python.org/"><img alt="installing on Windows" src="../images/installing_on_windows.png" /></a></p>
+<p>如果您是macOS用户。请点击红色圈中的按钮。</p>
+<p><a href="https://www.python.org/"><img alt="installing on Windows" src="../images/installing_on_macOS.png" /></a></p>
+<p>要检查Python是否已安装，请在您的设备终端上编写以下命令。</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>--version
+</code></pre></div>
+<p><img alt="Python版本" src="../images/python_versio.png" /></p>
+<p>从终端中可以看到，我目前使用的是 <em>Python 3.7.5</em> 版本。您的Python版本可能与我的不同，但应为3.6或更高版本。如果您能看到Python版本，那么恭喜您，Python已经安装在您的计算机上。继续下一节。</p>
+<h3 id="python-shell">Python Shell<a class="headerlink" href="#python-shell" title="Permanent link">⚓︎</a></h3>
+<p>Python是一种解释型脚本语言，因此不需要编译。这意味着它逐行执行代码。Python附带了一个名为 <em>Python Shell（Python交互式Shell）</em> 的工具。它用于执行单个Python命令并获取结果。</p>
+<p>Python Shell 等待来自用户的Python代码。当您输入代码时，它会解释代码并在下一行显示结果。
+打开您的终端或命令提示符(cmd)并键入：</p>
+<div class="highlight"><pre><span></span><code>python
+</code></pre></div>
+<p><img alt="Python脚本Shell" src="../images/opening_python_shell.png" /></p>
+<p>Python交互式shell已经打开，并等待您编写Python代码（Python脚本）。您将在此符号 &gt;&gt;&gt; 旁边编写您的Python脚本，然后点击Enter。
+让我们在Python脚本Shell上编写我们的第一个脚本。</p>
+<p><img alt="Python脚本在Python Shell上" src="../images/adding_on_python_shell.png" /></p>
+<p>干得好，您在Python交互式Shell上编写了您的第一个Python脚本。我们如何关闭Python交互式Shell？
+要关闭Shell，在此符号 &gt;&gt; 旁边写入 <strong>exit()</strong> 命令并按Enter。</p>
+<p><img alt="从Python Shell退出" src="../images/exit_from_shell.png" /></p>
+<p>现在，您知道如何打开Python交互式Shell以及如何退出。</p>
+<p>只要您编写Python能理解的脚本，Python就会给您返回结果，否则它会返回错误。让我们故意犯一个错误，看看Python会返回什么。</p>
+<p><img alt="无效的语法错误" src="../images/invalid_syntax_error.png" /></p>
+<p>从返回的错误中，您可以看到Python非常聪明，它知道我们犯了错误，即 <em>Syntax Error: invalid syntax</em>，因为在Python中，将 x 用作乘法是语法错误，因为（x）在Python中不是有效的语法。代替 (<strong>x</strong>)，我们使用星号 (*) 进行乘法。返回的错误清楚地显示了要修复的内容。</p>
+<p>从程序中识别并删除错误的过程称为 <em>调试</em>。让我们通过将 * 放在 <strong>x</strong> 的位置来调试它。</p>
+<p><img alt="修复语法错误" src="../images/fixing_syntax_error.png" /></p>
+<p>我们的错误已经被修复，代码运行并返回了我们期望的结果。作为程序员，您将每天看到这种类型的错误。了解如何调试是很好的。要善于调试，您应该了解您面临的错误类型。您可能会遇到的一些Python错误包括 <em>SyntaxError</em>、<em>IndexError</em>、<em>NameError</em>、<em>ModuleNotFoundError</em>、<em>KeyError</em>、<em>ImportError</em>、<em>AttributeError</em>、<em>TypeError</em>、<em>ValueError</em>、<em>ZeroDivisionError</em> 等。我们将在后续部分更详细地了解不同的Python <strong>错误类型</strong>。</p>
+<p>让我们继续练习如何使用Python交互式Shell。前往您的终端或命令提示符并键入单词 <strong>python</strong>。</p>
+<p><img alt="Python脚本Shell" src="../images/opening_python_shell.png" /></p>
+<p>Python交互式Shell已打开。在进入下一节之前，让我们在Python交互式Shell上进行更多练习。通过在Shell上写 <em>exit()</em> 来关闭已打开的Shell，然后再次打开它，让我们练习如何在Python Shell上编写文本。</p>
+<p><img alt="在Python Shell上写字符串" src="../images/writing_string_on_shell.png" /></p>
+<h3 id="visual-studio-code">安装Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Permanent link">⚓︎</a></h3>
+<p>Python交互式Shell适用于尝试和测试小型脚本代码，但不适用于大型项目。在实际工作环境中，开发人员使用不同的代码编辑器来编写代码。在这30天的Python编程挑战中，我们将使用Visual Studio Code。Visual Studio Code是一个非常流行的开源文本编辑器。我是vscode的粉丝，我建议<a href="https://code.visualstudio.com/">下载</a>Visual Studio Code，但如果您更喜欢其他编辑器，请随意使用您拥有的编辑器。</p>
+<p><a href="https://code.visualstudio.com/"><img alt="Visual Studio Code" src="../images/vscode.png" /></a></p>
+<p>如果您已安装Visual Studio Code，让我们看看如何使用它。</p>
+<h4 id="visual-studio-code_1">如何使用Visual Studio Code<a class="headerlink" href="#visual-studio-code_1" title="Permanent link">⚓︎</a></h4>
+<p>通过双击Visual Studio图标打开Visual Studio Code。当您打开它时，您将获得这种类型的界面。尝试与标记的图标进行交互。</p>
+<p><img alt="Visual Studio Code" src="../images/vscode_ui.png" /></p>
+<p>在桌面上创建一个名为30DaysOfPython的文件夹。然后使用Visual Studio Code打开它。</p>
+<p><img alt="在Visual Studio上打开项目" src="../images/how_to_open_project_on_vscode.png" /></p>
+<p><img alt="打开一个项目" src="../images/opening_project.png" /></p>
+<p>打开后，您将看到创建30DaysOfPython项目目录内文件和文件夹的快捷方式。如下图所示，我已创建了第一个文件，helloworld.py。您可以做同样的事情。</p>
+<p><img alt="创建一个Python文件" src="../images/helloworld.png" /></p>
+<p>在长时间编码之后，您想要关闭代码编辑器，对吗？这是如何关闭已打开项目的方法。</p>
+<p><img alt="关闭项目" src="../images/closing_opened_project.png" /></p>
+<p>恭喜，您已经完成了设置开发环境的工作。让我们开始编码。</p>
+<h2 id="python_2">基本Python<a class="headerlink" href="#python_2" title="Permanent link">⚓︎</a></h2>
+<h3 id="python_3">Python语法<a class="headerlink" href="#python_3" title="Permanent link">⚓︎</a></h3>
+<p>Python脚本可以在Python交互式shell或代码编辑器中编写。Python文件的扩展名是.py。</p>
+<h3 id="python_4">Python缩进<a class="headerlink" href="#python_4" title="Permanent link">⚓︎</a></h3>
+<p>缩进是文本中的空白。在许多语言中，缩进用于增加代码的可读性，但是Python使用缩进来创建代码块。在其他编程语言中，大括号用于创建代码块，而不是缩进。编写Python代码时的常见错误之一是错误的缩进。</p>
+<p><img alt="缩进错误" src="../images/indentation.png" /></p>
+<h3 id="_2">注释<a class="headerlink" href="#_2" title="Permanent link">⚓︎</a></h3>
+<p>注释对于使代码更具可读性并在我们的代码中留下备注非常重要。Python不运行我们代码中的注释部分。
+在Python中，以井号(#)开头的任何文本都是注释。</p>
+<p><strong>示例：单行注释</strong></p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1"># 这是第一个注释</span>
+<span class="w">    </span><span class="c1"># 这是第二个注释</span>
+<span class="w">    </span><span class="c1"># Python正在吞噬世界</span>
+</code></pre></div>
+<p><strong>示例：多行注释</strong></p>
+<p>如果多行注释没有分配给变量，可以使用三重引号。</p>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;&quot;&quot;这是多行注释</span>
+<span class="s2">多行注释占据多行。</span>
+<span class="s2">Python正在吞噬世界</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</code></pre></div>
+<h3 id="_3">数据类型<a class="headerlink" href="#_3" title="Permanent link">⚓︎</a></h3>
+<p>在Python中有多种数据类型。让我们从最常见的数据类型开始。其他部分将详细介绍不同的数据类型。目前，让我们只浏览不同的数据类型并熟悉它们。您现在不必完全了解它们。</p>
+<h4 id="_4">数字<a class="headerlink" href="#_4" title="Permanent link">⚓︎</a></h4>
+<ul>
+<li>整数：整数（负数、零和正数）
+  示例：
+  ... -3, -2, -1, 0, 1, 2, 3 ...</li>
+<li>浮点数：十进制数
+  示例：
+  ... -3.5, -2.25, -1.0, 0.0, 1.1, 2.2, 3.5 ...</li>
+<li>复数
+  示例：
+  1 + j, 2 + 4j</li>
+</ul>
+<h4 id="_5">字符串<a class="headerlink" href="#_5" title="Permanent link">⚓︎</a></h4>
+<p>在单引号或双引号下的一个或多个字符的集合。如果一个字符串超过一句，则使用三引号。</p>
+<p><strong>示例：</strong></p>
+<div class="highlight"><pre><span></span><code><span class="s1">&#39;Asabeneh&#39;</span>
+<span class="s1">&#39;Finland&#39;</span>
+<span class="s1">&#39;Python&#39;</span>
+<span class="s1">&#39;I love teaching&#39;</span>
+<span class="s1">&#39;I hope you are enjoying the first day of 30DaysOfPython Challenge&#39;</span>
+</code></pre></div>
+<blockquote>
+<p>在Python中，如果一个字符串包含多个句子，使用三引号（'''或"""）表示一个多行字符串文本块，也称为多行字符串字面值。这样的字符串可以跨越多行，包括换行符，而不需要使用转义字符或多个单行字符串来表示。</p>
+<p>例如：</p>
+<div class="highlight"><pre><span></span><code><span class="n">multiline_string</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">这是一个多行字符串。</span>
+<span class="s1">它可以包含多个句子和换行符。</span>
+<span class="s1">&#39;&#39;&#39;</span>
+</code></pre></div>
+<p>或者使用双引号：</p>
+<div class="highlight"><pre><span></span><code><span class="n">multiline_string</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">这也是一个多行字符串。</span>
+<span class="s2">使用双引号也可以创建多行字符串。</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</code></pre></div>
+<p>多行字符串通常用于文档字符串（docstrings）、长文本、SQL查询、HTML代码等需要跨越多行的情况。它们提供了一种方便的方式来包含大块文本而不需要在每行都添加换行符。</p>
+</blockquote>
+<h4 id="_6">布尔值<a class="headerlink" href="#_6" title="Permanent link">⚓︎</a></h4>
+<p>布尔数据类型要么是True，要么是False。T和F应始终大写。</p>
+<p><strong>示例：</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kc">True</span>  <span class="c1">#  灯亮了吗？如果亮了，值为True</span>
+<span class="kc">False</span> <span class="c1"># 灯亮了吗？如果熄灭了，值为False</span>
+</code></pre></div>
+<h4 id="_7">列表<a class="headerlink" href="#_7" title="Permanent link">⚓︎</a></h4>
+<p>Python列表是一个有序的集合，允许存储不同数据类型的项目。列表类似于JavaScript中的数组。</p>
+<p><strong>示例：</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>  <span class="c1"># 全部是相同数据类型 - 数字列表</span>
+<span class="p">[</span><span class="s1">&#39;Banana&#39;</span><span class="p">,</span> <span class="s1">&#39;Orange&#39;</span><span class="p">,</span> <span class="s1">&#39;Mango&#39;</span><span class="p">,</span> <span class="s1">&#39;Avocado&#39;</span><span class="p">]</span> <span class="c1"># 全部是相同数据类型 - 字符串列表（水果）</span>
+<span class="p">[</span><span class="s1">&#39;Finland&#39;</span><span class="p">,</span><span class="s1">&#39;Estonia&#39;</span><span class="p">,</span> <span class="s1">&#39;Sweden&#39;</span><span class="p">,</span><span class="s1">&#39;Norway&#39;</span><span class="p">]</span> <span class="c1"># 全部是相同数据类型 - 字符串列表（国家）</span>
+<span class="p">[</span><span class="s1">&#39;Banana&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mf">9.81</span><span class="p">]</span> <span class="c1"># 列表中的不同数据类型 - 字符串、整数、布尔值和浮点数</span>
+</code></pre></div>
+<h4 id="_8">字典<a class="headerlink" href="#_8" title="Permanent link">⚓︎</a></h4>
+<p>Python字典对象是一个无序的数据集合，采用键值对格式。</p>
+<p><strong>示例：</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="s1">&#39;first_name&#39;</span><span class="p">:</span><span class="s1">&#39;Asabeneh&#39;</span><span class="p">,</span>
+<span class="s1">&#39;last_name&#39;</span><span class="p">:</span><span class="s1">&#39;Yetayeh&#39;</span><span class="p">,</span>
+<span class="s1">&#39;country&#39;</span><span class="p">:</span><span class="s1">&#39;Finland&#39;</span><span class="p">,</span> 
+<span class="s1">&#39;age&#39;</span><span class="p">:</span><span class="mi">250</span><span class="p">,</span> 
+<span class="s1">&#39;is_married&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+<span class="s1">&#39;skills&#39;</span><span class="p">:[</span><span class="s1">&#39;JS&#39;</span><span class="p">,</span> <span class="s1">&#39;React&#39;</span><span class="p">,</span> <span class="s1">&#39;Node&#39;</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="_9">元组<a class="headerlink" href="#_9" title="Permanent link">⚓︎</a></h4>
+<p>元组是一个有序的集合，与列表类似，但一旦创建，元组就无法修改。它们是不可变的。</p>
+<p><strong>示例：</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="s1">&#39;Asabeneh&#39;</span><span class="p">,</span> <span class="s1">&#39;Pawel&#39;</span><span class="p">,</span> <span class="s1">&#39;Brook&#39;</span><span class="p">,</span> <span class="s1">&#39;Abraham&#39;</span><span class="p">,</span> <span class="s1">&#39;Lidiya&#39;</span><span class="p">)</span> <span class="c1"># 姓名</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="s1">&#39;Earth&#39;</span><span class="p">,</span> <span class="s1">&#39;Jupiter&#39;</span><span class="p">,</span> <span class="s1">&#39;Neptune&#39;</span><span class="p">,</span> <span class="s1">&#39;Mars&#39;</span><span class="p">,</span> <span class="s1">&#39;Venus&#39;</span><span class="p">,</span> <span class="s1">&#39;Saturn&#39;</span><span class="p">,</span> <span class="s1">&#39;Uranus&#39;</span><span class="p">,</span> <span class="s1">&#39;Mercury&#39;</span><span class="p">)</span> <span class="c1"># 行星</span>
+</code></pre></div>
+<h4 id="_10">集合<a class="headerlink" href="#_10" title="Permanent link">⚓︎</a></h4>
+<p>集合是一种类似于列表和元组的数据类型。与列表和元组不同，集合不是有序的项目集合。就像在数学中一样，Python中的集合只存储唯一的项目。</p>
+<p>在后</p>
+<p>续部分中，我们将详细讨论每种Python数据类型。</p>
+<p><strong>示例：</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+<span class="p">{</span><span class="mf">3.14</span><span class="p">,</span> <span class="mf">9.81</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">}</span> <span class="c1"># 集合中的顺序不重要</span>
+</code></pre></div>
+<h3 id="_11">检查数据类型<a class="headerlink" href="#_11" title="Permanent link">⚓︎</a></h3>
+<p>要检查某个数据/变量的数据类型，我们使用 <strong>type</strong> 函数。在下面的终端中，您将看到不同的Python数据类型：</p>
+<p><img alt="检查数据类型" src="../images/checking_data_types.png" /></p>
+<h3 id="python_5">Python文件<a class="headerlink" href="#python_5" title="Permanent link">⚓︎</a></h3>
+<p>首先打开您的项目文件夹，30DaysOfPython。如果您没有这个文件夹，请创建一个名为30DaysOfPython的文件夹。在此文件夹内创建一个名为helloworld.py的文件。现在，让我们在Visual Studio Code上进行Python交互式shell上做的事情。</p>
+<p>Python交互式shell在不使用 <strong>print</strong> 的情况下进行打印，但是在Visual Studio Code上，为了查看我们的结果，我们应该使用内置函数 <em>print()</em>。 <em>print()</em> 内置函数接受一个或多个参数，如下所示： <em>print('arument1', 'argument2', 'argument3')</em>。请查看下面的示例。</p>
+<p><strong>示例：</strong></p>
+<p>文件名为helloworld.py</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 第1天 - 30天的Python挑战</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>             <span class="c1"># 加法(+)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>             <span class="c1"># 减法(-)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>             <span class="c1"># 乘法(*)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>             <span class="c1"># 除法(/)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>            <span class="c1"># 指数(**)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>             <span class="c1"># 模数(%)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>            <span class="c1"># 地板除法运算符(//)</span>
+
+<span class="c1"># 检查数据类型</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>          <span class="c1"># 整数</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">3.14</span><span class="p">))</span>        <span class="c1"># 浮点数</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span><span class="n">j</span><span class="p">))</span>      <span class="c1"># 复数</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;Asabeneh&#39;</span><span class="p">))</span>  <span class="c1"># 字符串</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>   <span class="c1"># 列表</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Asabeneh&#39;</span><span class="p">}))</span> <span class="c1"># 字典</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">({</span><span class="mf">9.8</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">}))</span>    <span class="c1"># 集合</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">((</span><span class="mf">9.8</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">)))</span>    <span class="c1"># 元组</span>
+</code></pre></div>
+<p>要运行Python文件，请查看下面的图像。您可以通过在Visual Studio Code上运行绿色按钮，或在终端中键入 <em>python helloworld.py</em> 来运行Python文件。</p>
+<p><img alt="" src="../images/running_python_script.png" /></p>
+<p>🌕 您很棒。您刚刚完成了第1天的挑战，并正朝着伟大的方向前进。现在为您的大脑和肌肉做一些练习。</p>
+<h2 id="_12">💻 练习<a class="headerlink" href="#_12" title="Permanent link">⚓︎</a></h2>
+<h3 id="level-1">练习：Level 1<a class="headerlink" href="#level-1" title="Permanent link">⚓︎</a></h3>
+<ol>
+<li>检查您正在使用的Python版本。</li>
+<li>打开Python交互式shell，并执行以下操作。操作数为3和4。</li>
+<li>加法(+)</li>
+<li>减法(-)</li>
+<li>乘法(*)</li>
+<li>模数(%)</li>
+<li>除法(/)</li>
+<li>指数(**)</li>
+<li>地板除法运算符(//)</li>
+<li>在Python交互式shell上编写字符串。字符串如下：</li>
+<li>您的名字</li>
+<li>您的姓氏</li>
+<li>您的国家</li>
+<li>我喜欢教学</li>
+<li>我希望您在30DaysOfPython挑战的第一天过得愉快</li>
+<li>检查以下数据的数据类型：</li>
+<li>10</li>
+<li>9.8</li>
+<li>3.14</li>
+<li>4 - 4j</li>
+<li>['Asabeneh', 'Python', '芬兰']</li>
+<li>您的名字</li>
+<li>您的姓氏</li>
+<li>您的国家</li>
+</ol>
+<h3 id="level-2">练习：Level 2<a class="headerlink" href="#level-2" title="Permanent link">⚓︎</a></h3>
+<ol>
+<li>在30DaysOfPython文件夹内创建一个名为day_1的文件夹。在day_1文件夹内，创建一个名为helloworld.py的Python文件，并重复问题1、2、3和4。请记住在Python文件上工作时使用 <em>print()</em>。导航到您保存文件的目录，并运行它。</li>
+</ol>
+<h3 id="level-3">练习：Level 3<a class="headerlink" href="#level-3" title="Permanent link">⚓︎</a></h3>
+<ol>
+<li>为不同的Python数据类型编写示例，如数字（整数、浮点数、复数）、字符串、布尔值、列表、元组、集合和字典。</li>
+<li>找到(2, 3)和(10, 8)之间的<a href="https://upimg.baike.so.com/doc/2949437-3111768.html">欧几里得距离</a>。</li>
+</ol>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2024</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2024</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="上一页: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../02_variables_builtin_functions/" class="md-footer__link md-footer__link--next" aria-label="下一页: 02 变量，内置函数">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                02 变量，内置函数
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 Ean Yang
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/YQisme" target="_blank" rel="noopener" title="github主页" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://space.bilibili.com/244185393?spm_id_from=333.788.0.0" target="_blank" rel="noopener" title="b站主页" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79 0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0s16.1 2.868 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0c8.8 0 16.1 2.868 21.9 8.603 5.7 5.737 8.6 12.997 8.6 21.797 0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1zm-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8 6.3-6.5 9.7-14.3 10.1-23.5V173.8zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5-9.6 0-17.5-3.2-23.6-9.5-6.1-6.3-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2 6.3-6.3 13.2-9.6 23.3-10 9.2.4 17 3.7 23.3 10zm191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.1 6.3-14 9.5-23.6 9.5-9.6 0-17.4-3.2-23.6-9.5-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2 6.3-6.3 14.1-9.6 23.3-10 9.2.4 17 3.7 23.3 10z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://eanyang7.com" target="_blank" rel="noopener" title="个人主页" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M112 48a48 48 0 1 1 96 0 48 48 0 1 1-96 0zm40 304v128c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9l-28.6 47.6c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l58.3 97c9.1 15.1 4.2 34.8-10.9 43.9s-34.8 4.2-43.9-10.9L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352h-16z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.prune", "navigation.top", "toc.follow", "header.autohide", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.action.edit", "content.action.view", "content.code.copy"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>
