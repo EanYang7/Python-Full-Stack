@@ -1,81 +1,37 @@
-<div align="center">
-  <h1> 30 Days Of Python: Day 25 - Pandas </h1>
-  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
-  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
-  </a>
-  <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
-  </a>
+# 25 Pandas
 
-  <sub>Author:
-  <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small>Second Edition: July, 2021</small>
-  </sub>
+Pandas是一个开源的、高性能的、易于使用的Python编程语言的数据结构和数据分析工具。
+Pandas添加了与表格式数据一起使用的数据结构和工具，包括*Series*和*DataFrames*。
+Pandas提供了数据操作工具：
 
-</div>
+- 重塑reshaping
+- 合并merging
+- 排序sorting
+- 切片slicing
+- 聚合aggregation
 
-[<< Day 24](../24_Day_Statistics/24_statistics.md) | [Day 26 >>](../26_Day_Python_web/26_python_web.md)
+> 如果您使用Anaconda，无需安装Pandas。
 
-![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
+### 安装Pandas
 
-- [📘 Day 25](#-day-25)
-  - [Pandas](#pandas)
-    - [Installing Pandas](#installing-pandas)
-    - [Importing Pandas](#importing-pandas)
-    - [Creating Pandas Series with Default Index](#creating-pandas-series-with-default-index)
-    - [Creating  Pandas Series with custom index](#creating--pandas-series-with-custom-index)
-    - [Creating Pandas Series from a Dictionary](#creating-pandas-series-from-a-dictionary)
-    - [Creating a Constant Pandas Series](#creating-a-constant-pandas-series)
-    - [Creating a  Pandas Series Using Linspace](#creating-a--pandas-series-using-linspace)
-  - [DataFrames](#dataframes)
-    - [Creating DataFrames from List of Lists](#creating-dataframes-from-list-of-lists)
-    - [Creating DataFrame Using Dictionary](#creating-dataframe-using-dictionary)
-    - [Creating DataFrames from a List of Dictionaries](#creating-dataframes-from-a-list-of-dictionaries)
-  - [Reading CSV File Using Pandas](#reading-csv-file-using-pandas)
-    - [Data Exploration](#data-exploration)
-  - [Modifying a DataFrame](#modifying-a-dataframe)
-    - [Creating a DataFrame](#creating-a-dataframe)
-    - [Adding a New Column](#adding-a-new-column)
-    - [Modifying column values](#modifying-column-values)
-    - [Formating DataFrame columns](#formating-dataframe-columns)
-  - [Checking data types of Column values](#checking-data-types-of-column-values)
-    - [Boolean Indexing](#boolean-indexing)
-  - [Exercises: Day 25](#exercises-day-25)
-  
-# 📘 Day 25
+对于Mac：
 
-## Pandas
-
-Pandas is an open source, high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
-Pandas adds data structures and tools designed to work with table-like data which is *Series* and *Data Frames*.
-Pandas provides tools for data manipulation: 
-
-- reshaping
-- merging
-- sorting
-- slicing
-- aggregation
-- imputation.
-If you are using anaconda, you do not have install pandas.
-
-### Installing Pandas
-
-For Mac:
 ```py
 pip install conda
 conda install pandas
 ```
 
-For Windows:
+对于Windows：
+
 ```py
 pip install conda
 pip install pandas
 ```
 
-Pandas data structure is based on *Series* and *DataFrames*. 
+Pandas数据结构基于*Series*和*DataFrames*。
 
-A *series* is a *column* and a DataFrame is a *multidimensional table* made up of collection of *series*. In order to create a pandas series we should use numpy to create a one dimensional arrays or a python list.
-Let us see an example of a series:
+*Series*是一个*列*，而DataFrame是由一系列*Series*组成的*多维表格*。为了创建一个Pandas系列，我们应该使用NumPy创建一个一维数组或Python列表。
+让我们看一个系列的示例：
 
 Names Pandas Series
 
@@ -89,29 +45,29 @@ Cities Series
 
 ![pandas series](../images/pandas-series-3.png)
 
-As you can see, pandas series is just one column of data. If we want to have multiple columns we use data frames. The example below shows pandas DataFrames.
+正如您所看到的，Pandas系列只是一列数据。如果我们想要有多列，我们使用数据帧。下面的示例显示了Pandas DataFrames。
 
-Let us see, an example of a pandas data frame:
+让我们看一个Pandas数据帧的示例：
 
 ![Pandas data frame](../images/pandas-dataframe-1.png)
 
-Data frame is a collection of rows and columns. Look at the table below; it has many more columns than the example above:
+数据框是行和列的集合。看看下面的表格；它比上面的示例有更多的列：
 
 ![Pandas data frame](../images/pandas-dataframe-2.png)
 
-Next, we will see how to import pandas and how to create Series and DataFrames using pandas
+接下来，我们将看看如何导入Pandas以及如何使用Pandas创建Series和DataFrames
 
-### Importing Pandas
+### 导入Pandas
 
 ```python
-import pandas as pd # importing pandas as pd
-import numpy  as np # importing numpy as np
+import pandas as pd # 将Pandas导入为pd
+import numpy as np # 将NumPy导入为np
 ```
 
-### Creating Pandas Series with Default Index
+### 创建带有默认索引的Pandas Series
 
 ```python
-nums = [1, 2, 3, 4,5]
+nums = [1, 2, 3, 4, 5]
 s = pd.Series(nums)
 print(s)
 ```
@@ -125,7 +81,7 @@ print(s)
     dtype: int64
 ```
 
-### Creating  Pandas Series with custom index
+### 创建带有自定义索引的Pandas Series
 
 ```python
 nums = [1, 2, 3, 4, 5]
@@ -143,19 +99,19 @@ print(s)
 ```
 
 ```python
-fruits = ['Orange','Banana','Mango']
+fruits = ['橙子','香蕉','芒果']
 fruits = pd.Series(fruits, index=[1, 2, 3])
 print(fruits)
 ```
 
 ```sh
-    1    Orange
-    2    Banana
-    3    Mango
+    1    橙子
+    2    香蕉
+    3    芒果
     dtype: object
 ```
 
-### Creating Pandas Series from a Dictionary
+### 从字典创建Pandas Series
 
 ```python
 dct = {'name':'Asabeneh','country':'Finland','city':'Helsinki'}
@@ -173,7 +129,7 @@ print(s)
     dtype: object
 ```
 
-### Creating a Constant Pandas Series
+### 创建一个常数Pandas Series
 
 ```python
 s = pd.Series(10, index = [1, 2, 3])
@@ -187,7 +143,7 @@ print(s)
     dtype: int64
 ```
 
-### Creating a  Pandas Series Using Linspace
+### 使用Linspace创建Pandas Series
 
 ```python
 s = pd.Series(np.linspace(5, 20, 10)) # linspace(starting, end, items)
@@ -208,19 +164,19 @@ print(s)
     dtype: float64
 ```
 
-## DataFrames
+## 数据帧
 
-Pandas data frames can be created in different ways.
+Pandas数据帧可以以不同的方式创建。
 
-### Creating DataFrames from List of Lists
+### 从列表列表创建数据帧
 
 ```python
 data = [
-    ['Asabeneh', 'Finland', 'Helsink'], 
-    ['David', 'UK', 'London'],
-    ['John', 'Sweden', 'Stockholm']
+    ['Asabeneh', '芬兰', '赫尔辛基'], 
+    ['David', '英国', '伦敦'],
+    ['John', '瑞典', '斯德哥尔摩']
 ]
-df = pd.DataFrame(data, columns=['Names','Country','City'])
+df = pd.DataFrame(data, columns=['姓名','国家','城市'])
 print(df)
 ```
 
@@ -228,38 +184,39 @@ print(df)
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Names</th>
-      <th>Country</th>
-      <th>City</th>
+      <th>姓名</th>
+      <th>国家</th>
+      <th>城市</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>0</td>
       <td>Asabeneh</td>
-      <td>Finland</td>
-      <td>Helsink</td>
+      <td>芬兰</td>
+      <td>赫尔辛基</td>
     </tr>
     <tr>
       <td>1</td>
       <td>David</td>
-      <td>UK</td>
-      <td>London</td>
+      <td>英国</td>
+      <td>伦敦</td>
     </tr>
     <tr>
       <td>2</td>
       <td>John</td>
-      <td>Sweden</td>
-      <td>Stockholm</td>
+      <td>瑞典</td>
+      <td>斯德哥尔摩</td>
     </tr>
   </tbody>
 </table>
 
-### Creating DataFrame Using Dictionary
+
+### 使用字典创建数据帧
 
 ```python
-data = {'Name': ['Asabeneh', 'David', 'John'], 'Country':[
-    'Finland', 'UK', 'Sweden'], 'City': ['Helsiki', 'London', 'Stockholm']}
+data = {'姓名': ['Asabeneh', 'David', 'John'], '国家':[
+    '芬兰', '英国', '瑞典'], '城市': ['赫尔辛基', '伦敦', '斯德哥尔摩']}
 df = pd.DataFrame(data)
 print(df)
 ```
@@ -268,40 +225,41 @@ print(df)
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Name</th>
-      <th>Country</th>
-      <th>City</th>
+      <th>姓名</th>
+      <th>国家</th>
+      <th>城市</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>0</td>
       <td>Asabeneh</td>
-      <td>Finland</td>
-      <td>Helsiki</td>
+      <td>芬兰</td>
+      <td>赫尔辛基</td>
     </tr>
     <tr>
       <td>1</td>
       <td>David</td>
-      <td>UK</td>
-      <td>London</td>
+      <td>英国</td>
+      <td>伦敦</td>
     </tr>
     <tr>
       <td>2</td>
       <td>John</td>
-      <td>Sweden</td>
-      <td>Stockholm</td>
+      <td>瑞典</td>
+      <td>斯德哥尔摩</td>
     </tr>
   </tbody>
 </table>
 
-### Creating DataFrames from a List of Dictionaries
+
+### 从字典列表创建数据帧
 
 ```python
 data = [
-    {'Name': 'Asabeneh', 'Country': 'Finland', 'City': 'Helsinki'},
-    {'Name': 'David', 'Country': 'UK', 'City': 'London'},
-    {'Name': 'John', 'Country': 'Sweden', 'City': 'Stockholm'}]
+    {'姓名': 'Asabeneh', '国家': '芬兰', '城市': '赫尔辛基'},
+    {'姓名': 'David', '国家': '英国', '城市': '伦敦'},
+    {'姓名': 'John', '国家': '瑞典', '城市': '斯德哥尔摩'}]
 df = pd.DataFrame(data)
 print(df)
 ```
@@ -310,42 +268,43 @@ print(df)
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Name</th>
-      <th>Country</th>
-      <th>City</th>
+      <th>姓名</th>
+      <th>国家</th>
+      <th>城市</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>0</td>
       <td>Asabeneh</td>
-      <td>Finland</td>
-      <td>Helsinki</td>
+      <td>芬兰</td>
+      <td>赫尔辛基</td>
     </tr>
     <tr>
       <td>1</td>
       <td>David</td>
-      <td>UK</td>
-      <td>London</td>
+      <td>英国</td>
+      <td>伦敦</td>
     </tr>
     <tr>
       <td>2</td>
       <td>John</td>
-      <td>Sweden</td>
-      <td>Stockholm</td>
+      <td>瑞典</td>
+      <td>斯德哥尔摩</td>
     </tr>
   </tbody>
 </table>
 
-## Reading CSV File Using Pandas
 
-To download the CSV file, what is needed in this example, console/command line is enough:
+## 使用Pandas读取CSV文件
+
+要下载CSV文件，在这个示例中，控制台/命令行足够了：
 
 ```sh
 curl -O https://raw.githubusercontent.com/Asabeneh/30-Days-Of-Python/master/data/weight-height.csv
 ```
 
-Put the downloaded file in your working directory.
+将下载的文件放入您的工作目录。
 
 ```python
 import pandas as pd
@@ -354,12 +313,12 @@ df = pd.read_csv('weight-height.csv')
 print(df)
 ```
 
-### Data Exploration
+### 数据探索
 
-Let us read only the first 5 rows using head()
+让我们只读取前5行，使用`head()`方法
 
 ```python
-print(df.head()) # give five rows we can increase the number of rows by passing argument to the head() method
+print(df.head()) # 通过传递参数给head()方法，可以获得五行以上的数据
 ```
 
 
@@ -367,114 +326,113 @@ print(df.head()) # give five rows we can increase the number of rows by passing 
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Gender</th>
-      <th>Height</th>
-      <th>Weight</th>
+      <th>性别</th>
+      <th>身高</th>
+      <th>体重</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>0</td>
-      <td>Male</td>
+      <td>男性</td>
       <td>73.847017</td>
       <td>241.893563</td>
     </tr>
     <tr>
       <td>1</td>
-      <td>Male</td>
+      <td>男性</td>
       <td>68.781904</td>
       <td>162.310473</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>Male</td>
+      <td>男性</td>
       <td>74.110105</td>
       <td>212.740856</td>
     </tr>
     <tr>
       <td>3</td>
-      <td>Male</td>
+      <td>男性</td>
       <td>71.730978</td>
       <td>220.042470</td>
     </tr>
     <tr>
       <td>4</td>
-      <td>Male</td>
+      <td>男性</td>
       <td>69.881796</td>
       <td>206.349801</td>
     </tr>
   </tbody>
 </table>
-
-Let us also explore the last recordings of the dataframe using the tail() methods.
+让我们也使用`tail()`方法来探索数据帧的最后记录。
 
 ```python
-print(df.tail()) # tails give the last five rows, we can increase the rows by passing argument to tail method
+print(df.tail()) # 通过传递参数给tail方法，可以获得五行以上的数据
 ```
 
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Gender</th>
-      <th>Height</th>
-      <th>Weight</th>
+      <th>性别</th>
+      <th>身高</th>
+      <th>体重</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>9995</td>
-      <td>Female</td>
+      <td>女性</td>
       <td>66.172652</td>
       <td>136.777454</td>
     </tr>
     <tr>
       <td>9996</td>
-      <td>Female</td>
+      <td>女性</td>
       <td>67.067155</td>
       <td>170.867906</td>
     </tr>
     <tr>
       <td>9997</td>
-      <td>Female</td>
+      <td>女性</td>
       <td>63.867992</td>
       <td>128.475319</td>
     </tr>
     <tr>
       <td>9998</td>
-      <td>Female</td>
+      <td>女性</td>
       <td>69.034243</td>
       <td>163.852461</td>
     </tr>
     <tr>
       <td>9999</td>
-      <td>Female</td>
+      <td>女性</td>
       <td>61.944246</td>
       <td>113.649103</td>
     </tr>
   </tbody>
 </table>
 
-As you can see the csv file has three rows: Gender, Height and Weight. If the DataFrame would have a long rows, it would be hard to know all the columns. Therefore, we should use a method to know the colums.  we do not know the number of rows. Let's use shape meathod.
+如您所见，CSV文件有三行：性别、身高和体重。如果DataFrame有很多行，将很难了解所有的列。因此，我们应该使用一种方法来了解列。我们不知道行的数量。让我们使用`shape`方法。
 
 ```python
-print(df.shape) # as you can see 10000 rows and three columns
+print(df.shape) # 可以看到有10000行和三列
 ```
 
     (10000, 3)
 
-Let us get all the columns using columns.
+让我们使用`columns`获取所有的列。
 
 ```python
 print(df.columns)
 ```
 
-    Index(['Gender', 'Height', 'Weight'], dtype='object')
+    Index(['性别', '身高', '体重'], dtype='object')
 
-Now, let us get a specific column using the column key
+现在，让我们使用列键来获取特定的列。
 
 ```python
-heights = df['Height'] # this is now a series
+heights = df['身高'] # 现在这是一个系列
 ```
 
 ```python
@@ -493,11 +451,11 @@ print(heights)
     9997    63.867992
     9998    69.034243
     9999    61.944246
-    Name: Height, Length: 10000, dtype: float64
+    Name: 身高, Length: 10000, dtype: float64
 ```
 
 ```python
-weights = df['Weight'] # this is now a series
+weights = df['体重'] # 现在这是一个系列
 ```
 
 ```python
@@ -516,7 +474,7 @@ print(weights)
     9997    128.475319
     9998    163.852461
     9999    113.649103
-    Name: Weight, Length: 10000, dtype: float64
+    Name: 体重, Length: 10000, dtype: float64
 ```
 
 ```python
@@ -525,10 +483,10 @@ print(len(heights) == len(weights))
 
     True
 
-The describe() method provides a descriptive statistical values of a dataset.
+`describe()`方法提供了有关数据集的描述性统计值。
 
 ```python
-print(heights.describe()) # give statisical information about height data
+print(heights.describe()) # 给出身高数据的统计信息
 ```
 
 ```sh
@@ -540,11 +498,11 @@ print(heights.describe()) # give statisical information about height data
     50%         66.318070
     75%         69.174262
     max         78.998742
-    Name: Height, dtype: float64
+    Name: 身高, dtype: float64
 ```
 
 ```python
-print(weights.describe())
+print(weights.describe()) # 给出体重数据的统计信息
 ```
 
 ```sh
@@ -556,19 +514,19 @@ print(weights.describe())
     50%        161.212928
     75%        187.169525
     max        269.989699
-    Name: Weight, dtype: float64
+    Name: 体重, dtype: float64
 ```
 
 ```python
-print(df.describe())  # describe can also give statistical information from a dataFrame
+print(df.describe())  # 描述也可以从DataFrame中提供统计信息
 ```
 
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Height</th>
-      <th>Weight</th>
+      <th>身高</th>
+      <th>体重</th>
     </tr>
   </thead>
   <tbody>
@@ -614,29 +572,27 @@ print(df.describe())  # describe can also give statistical information from a da
     </tr>
   </tbody>
 </table>
+与`describe()`类似，`info()`方法也提供有关数据集的信息。
 
-Similar to describe(), the info() method also give information about the dataset.
+修改DataFrame：
 
-## Modifying a DataFrame
+* 我们可以创建一个新的DataFrame
+* 我们可以创建一个新的列并将其添加到DataFrame中
+* 我们可以从DataFrame中删除现有列
+* 我们可以修改DataFrame中的现有列
+* 我们可以更改DataFrame中列值的数据类型
 
-Modifying a DataFrame:
-    * We can create a new DataFrame
-    * We can create a new column and add it to the DataFrame, 
-    * we can remove an existing column from a DataFrame, 
-    * we can modify an existing column in a DataFrame, 
-    * we can change the data type of column values in the DataFrame
+## 创建DataFrame
 
-### Creating a DataFrame
-
-As always, first we import the necessary packages. Now, lets import pandas and numpy, two best friends ever.
+首先，像往常一样，我们导入必要的包。现在，让我们导入pandas和numpy，它们是最好的朋友。
 
 ```python
 import pandas as pd
 import numpy as np
 data = [
-    {"Name": "Asabeneh", "Country":"Finland","City":"Helsinki"},
-    {"Name": "David", "Country":"UK","City":"London"},
-    {"Name": "John", "Country":"Sweden","City":"Stockholm"}]
+    {"姓名": "Asabeneh", "国家":"芬兰","城市":"赫尔辛基"},
+    {"姓名": "David", "国家":"英国","城市":"伦敦"},
+    {"姓名": "John", "国家":"瑞典","城市":"斯德哥尔摩"}]
 df = pd.DataFrame(data)
 print(df)
 ```
@@ -645,44 +601,45 @@ print(df)
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Name</th>
-      <th>Country</th>
-      <th>City</th>
+      <th>姓名</th>
+      <th>国家</th>
+      <th>城市</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>0</td>
       <td>Asabeneh</td>
-      <td>Finland</td>
-      <td>Helsinki</td>
+      <td>芬兰</td>
+      <td>赫尔辛基</td>
     </tr>
     <tr>
       <td>1</td>
       <td>David</td>
-      <td>UK</td>
-      <td>London</td>
+      <td>英国</td>
+      <td>伦敦</td>
     </tr>
     <tr>
       <td>2</td>
       <td>John</td>
-      <td>Sweden</td>
-      <td>Stockholm</td>
+      <td>瑞典</td>
+      <td>斯德哥尔摩</td>
     </tr>
   </tbody>
 </table>
 
-Adding a column to a DataFrame is like adding a key to a dictionary.
 
-First let's use the previous example to create a DataFrame. After we create the DataFrame, we will start modifying the columns and column values.
+向DataFrame中添加列就像向字典中添加键一样。
 
-### Adding a New Column
+首先，让我们使用前面的示例创建一个DataFrame。在创建DataFrame后，我们将开始修改列和列值。
 
-Let's add a weight column in the DataFrame
+### 添加新列
+
+让我们在DataFrame中添加一个体重列
 
 ```python
 weights = [74, 78, 69]
-df['Weight'] = weights
+df['体重'] = weights
 df
 ```
 
@@ -690,42 +647,43 @@ df
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Name</th>
-      <th>Country</th>
-      <th>City</th>
-      <th>Weight</th>
+      <th>姓名</th>
+      <th>国家</th>
+      <th>城市</th>
+      <th>体重</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>0</td>
       <td>Asabeneh</td>
-      <td>Finland</td>
-      <td>Helsinki</td>
+      <td>芬兰</td>
+      <td>赫尔辛基</td>
       <td>74</td>
     </tr>
     <tr>
       <td>1</td>
       <td>David</td>
-      <td>UK</td>
-      <td>London</td>
+      <td>英国</td>
+      <td>伦敦</td>
       <td>78</td>
     </tr>
     <tr>
       <td>2</td>
       <td>John</td>
-      <td>Sweden</td>
-      <td>Stockholm</td>
+      <td>瑞典</td>
+      <td>斯德哥尔摩</td>
       <td>69</td>
     </tr>
   </tbody>
 </table>
 
-Let's add a height column into the DataFrame aswell
+
+让我们也在DataFrame中添加一个身高列
 
 ```python
 heights = [173, 175, 169]
-df['Height'] = heights
+df['身高'] = heights
 print(df)
 ```
 
@@ -733,49 +691,50 @@ print(df)
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Name</th>
-      <th>Country</th>
-      <th>City</th>
-      <th>Weight</th>
-      <th>Height</th>
+      <th>姓名</th>
+      <th>国家</th>
+      <th>城市</th>
+      <th>体重</th>
+      <th>身高</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>0</td>
       <td>Asabeneh</td>
-      <td>Finland</td>
-      <td>Helsinki</td>
+      <td>芬兰</td>
+      <td>赫尔辛基</td>
       <td>74</td>
       <td>173</td>
     </tr>
     <tr>
       <td>1</td>
       <td>David</td>
-      <td>UK</td>
-      <td>London</td>
+      <td>英国</td>
+      <td>伦敦</td>
       <td>78</td>
       <td>175</td>
     </tr>
     <tr>
       <td>2</td>
       <td>John</td>
-      <td>Sweden</td>
-      <td>Stockholm</td>
+      <td>瑞典</td>
+      <td>斯德哥尔摩</td>
       <td>69</td>
       <td>169</td>
     </tr>
   </tbody>
 </table>
 
-As you can see in the DataFrame above, we did add new columns, Weight and Height. Let's add one additional column called BMI(Body Mass Index) by calculating their BMI using thier mass and height. BMI is mass divided by height squared (in meters) - Weight/Height * Height.
 
-As you can see, the height is in centimeters, so we shoud change it to meters. Let's modify the height row.
+正如您在上面的DataFrame中看到的，我们添加了新列Weight和Height。让我们添加一个名为BMI（身体质量指数）的额外列，通过计算他们的BMI来计算他们的BMI，使用他们的质量和身高。BMI是质量除以身高的平方（以米为单位） - 体重/身高 *身高。
 
-### Modifying column values
+如您所见，身高以厘米为单位，因此我们应该将其更改为米。让我们修改身高行。
+
+### 修改列值
 
 ```python
-df['Height'] = df['Height'] * 0.01
+df['身高'] = df['身高'] * 0.01
 df
 ```
 
@@ -783,46 +742,47 @@ df
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Name</th>
-      <th>Country</th>
-      <th>City</th>
-      <th>Weight</th>
-      <th>Height</th>
+      <th>姓名</th>
+      <th>国家</th>
+      <th>城市</th>
+      <th>体重</th>
+      <th>身高</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>0</td>
       <td>Asabeneh</td>
-      <td>Finland</td>
-      <td>Helsinki</td>
+      <td>芬兰</td>
+      <td>赫尔辛基</td>
       <td>74</td>
       <td>1.73</td>
     </tr>
     <tr>
       <td>1</td>
       <td>David</td>
-      <td>UK</td>
-      <td>London</td>
+      <td>英国</td>
+      <td>伦敦</td>
       <td>78</td>
       <td>1.75</td>
     </tr>
     <tr>
       <td>2</td>
       <td>John</td>
-      <td>Sweden</td>
-      <td>Stockholm</td>
+      <td>瑞典</td>
+      <td>斯德哥尔摩</td>
       <td>69</td>
       <td>1.69</td>
     </tr>
   </tbody>
 </table>
 
+
 ```python
-# Using functions makes our code clean, but you can calculate the bmi without one
+# 使用函数使我们的代码更整洁，但是您可以在不使用函数的情况下计算BMI
 def calculate_bmi ():
-    weights = df['Weight']
-    heights = df['Height']
+    weights = df['体重']
+    heights = df['身高']
     bmi = []
     for w,h in zip(weights, heights):
         b = w/(h*h)
@@ -843,11 +803,11 @@ df
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Name</th>
-      <th>Country</th>
-      <th>City</th>
-      <th>Weight</th>
-      <th>Height</th>
+      <th>姓名</th>
+      <th>国家</th>
+      <th>城市</th>
+      <th>体重</th>
+      <th>身高</th>
       <th>BMI</th>
     </tr>
   </thead>
@@ -855,8 +815,8 @@ df
     <tr>
       <td>0</td>
       <td>Asabeneh</td>
-      <td>Finland</td>
-      <td>Helsinki</td>
+      <td>芬兰</td>
+      <td>赫尔辛基</td>
       <td>74</td>
       <td>1.73</td>
       <td>24.725183</td>
@@ -864,8 +824,8 @@ df
     <tr>
       <td>1</td>
       <td>David</td>
-      <td>UK</td>
-      <td>London</td>
+      <td>英国</td>
+      <td>伦敦</td>
       <td>78</td>
       <td>1.75</td>
       <td>25.469388</td>
@@ -873,18 +833,17 @@ df
     <tr>
       <td>2</td>
       <td>John</td>
-      <td>Sweden</td>
-      <td>Stockholm</td>
+      <td>瑞典</td>
+      <td>斯德哥尔摩</td>
       <td>69</td>
       <td>1.69</td>
       <td>24.158818</td>
     </tr>
   </tbody>
 </table>
+### 格式化DataFrame列
 
-### Formating DataFrame columns
-
-The BMI column values of the DataFrame are float with many significant digits after decimal. Let's change it to one significant digit after point.
+DataFrame的BMI列值是浮点数，小数点后有很多有效数字。让我们将其更改为小数点后一位有效数字。
 
 ```python
 df['BMI'] = round(df['BMI'], 1)
@@ -895,75 +854,22 @@ print(df)
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Name</th>
-      <th>Country</th>
-      <th>City</th>
-      <th>Weight</th>
-      <th>Height</th>
+      <th>姓名</th>
+      <th>国家</th>
+      <th>城市</th>
+      <th>体重</th>
+      <th>身高</th>
       <th>BMI</th>
+      <th>出生年份</th>
+      <th>当前年份</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>0</td>
       <td>Asabeneh</td>
-      <td>Finland</td>
-      <td>Helsinki</td>
-      <td>74</td>
-      <td>1.73</td>
-      <td>24.7</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>David</td>
-      <td>UK</td>
-      <td>London</td>
-      <td>78</td>
-      <td>1.75</td>
-      <td>25.5</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>John</td>
-      <td>Sweden</td>
-      <td>Stockholm</td>
-      <td>69</td>
-      <td>1.69</td>
-      <td>24.2</td>
-    </tr>
-  </tbody>
-</table>
-
-The information in the DataFrame seems not yet complete, let's add birth year and current year columns.
-
-```python
-birth_year = ['1769', '1985', '1990']
-current_year = pd.Series(2020, index=[0, 1,2])
-df['Birth Year'] = birth_year
-df['Current Year'] = current_year
-df
-```
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Name</th>
-      <th>Country</th>
-      <th>City</th>
-      <th>Weight</th>
-      <th>Height</th>
-      <th>BMI</th>
-      <th>Birth Year</th>
-      <th>Current Year</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>Asabeneh</td>
-      <td>Finland</td>
-      <td>Helsinki</td>
+      <td>芬兰</td>
+      <td>赫尔辛基</td>
       <td>74</td>
       <td>1.73</td>
       <td>24.7</td>
@@ -973,8 +879,8 @@ df
     <tr>
       <td>1</td>
       <td>David</td>
-      <td>UK</td>
-      <td>London</td>
+      <td>英国</td>
+      <td>伦敦</td>
       <td>78</td>
       <td>1.75</td>
       <td>25.5</td>
@@ -984,8 +890,8 @@ df
     <tr>
       <td>2</td>
       <td>John</td>
-      <td>Sweden</td>
-      <td>Stockholm</td>
+      <td>瑞典</td>
+      <td>斯德哥尔摩</td>
       <td>69</td>
       <td>1.69</td>
       <td>24.2</td>
@@ -995,10 +901,27 @@ df
   </tbody>
 </table>
 
-## Checking data types of Column values
+
+DataFrame中的信息似乎还不完整，让我们添加出生年份和当前年份列。
 
 ```python
-print(df.Weight.dtype)
+birth_year = ['1769', '1985', '1990']
+current_year = pd.Series(2020, index=[0, 1, 2])
+df['出生年份'] = birth_year
+df['当前年份'] = current_year
+df
+```
+
+```python
+print(df)
+```
+
+现在，DataFrame的信息更加完整。
+
+## 检查列值的数据类型
+
+```python
+print(df['体重'].dtype)
 ```
 
 ```sh
@@ -1006,211 +929,61 @@ print(df.Weight.dtype)
 ```
 
 ```python
-df['Birth Year'].dtype # it gives string object , we should change this to number
-
+df['出生年份'].dtype # 它给出字符串对象，我们应该将其更改为数字
 ```
 
 ```python
-df['Birth Year'] = df['Birth Year'].astype('int')
-print(df['Birth Year'].dtype) # let's check the data type now
+df['出生年份'] = df['出生年份'].astype('int')
+print(df['出生年份'].dtype) # 现在检查数据类型
 ```
 
 ```sh
     dtype('int32')
 ```
 
-Now same for the current year:
+现在，出生年份的列值是整数。我们可以计算年龄。
 
 ```python
-df['Current Year'] = df['Current Year'].astype('int')
-df['Current Year'].dtype
-```
-
-```sh
-    dtype('int32')
-```
-
-Now, the column values of birth year and current year are integers. We can calculate the age.
-
-```python
-ages = df['Current Year'] - df['Birth Year']
+ages = df['当前年份'] - df['出生年份']
 ages
 ```
 
-    0    251
-    1     35
-    2     30
-    dtype: int32
-
 ```python
-df['Ages'] = ages
+df['年龄'] = ages
 print(df)
 ```
 
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Name</th>
-      <th>Country</th>
-      <th>City</th>
-      <th>Weight</th>
-      <th>Height</th>
-      <th>BMI</th>
-      <th>Birth Year</th>
-      <th>Current Year</th>
-      <th>Ages</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>Asabeneh</td>
-      <td>Finland</td>
-      <td>Helsinki</td>
-      <td>74</td>
-      <td>1.73</td>
-      <td>24.7</td>
-      <td>1769</td>
-      <td>2019</td>
-      <td>250</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>David</td>
-      <td>UK</td>
-      <td>London</td>
-      <td>78</td>
-      <td>1.75</td>
-      <td>25.5</td>
-      <td>1985</td>
-      <td>2019</td>
-      <td>34</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>John</td>
-      <td>Sweden</td>
-      <td>Stockholm</td>
-      <td>69</td>
-      <td>1.69</td>
-      <td>24.2</td>
-      <td>1990</td>
-      <td>2019</td>
-      <td>29</td>
-    </tr>
-  </tbody>
-</table>
+现在，第一行的人已经活了251年。这对于有人能活这么久来说是不太可能的。要么这是一个打字错误，要么数据是假的。所以让我们用不包括异常值的列的平均值来填充这个数据。
 
-The person in the first row lived so far for 251 years. It is unlikely for someone to live so long. Either it is a typo or the data is cooked. So lets fill that data with average of the columns without including outlier. 
-
-mean = (35 + 30)/ 2
+平均值 = (35 + 30) / 2
 
 ```python
-mean = (35 + 30)/ 2
-print('Mean: ',mean)	#it is good to add some description to the output, so we know what is what
+mean = (35 + 30) / 2
+print('平均值: ', mean) # 最好添加一些输出的描述，这样我们知道是什么意思
 ```
 
 ```sh
-   Mean:  32.5
+   平均值: 32.5
 ```
 
-### Boolean Indexing
+### 布尔索引
 
 ```python
-print(df[df['Ages'] > 120])
+print(df[df['年龄'] > 120])
 ```
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Name</th>
-      <th>Country</th>
-      <th>City</th>
-      <th>Weight</th>
-      <th>Height</th>
-      <th>BMI</th>
-      <th>Birth Year</th>
-      <th>Current Year</th>
-      <th>Ages</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>Asabeneh</td>
-      <td>Finland</td>
-      <td>Helsinki</td>
-      <td>74</td>
-      <td>1.73</td>
-      <td>24.7</td>
-      <td>1769</td>
-      <td>2020</td>
-      <td>251</td>
-    </tr>
-  </tbody>
-</table>
-
 
 ```python
-print(df[df['Ages'] < 120])
+print(df[df['年龄'] < 120])
 ```
 
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Name</th>
-      <th>Country</th>
-      <th>City</th>
-      <th>Weight</th>
-      <th>Height</th>
-      <th>BMI</th>
-      <th>Birth Year</th>
-      <th>Current Year</th>
-      <th>Ages</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>David</td>
-      <td>UK</td>
-      <td>London</td>
-      <td>78</td>
-      <td>1.75</td>
-      <td>25.5</td>
-      <td>1985</td>
-      <td>2020</td>
-      <td>35</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>John</td>
-      <td>Sweden</td>
-      <td>Stockholm</td>
-      <td>69</td>
-      <td>1.69</td>
-      <td>24.2</td>
-      <td>1990</td>
-      <td>2020</td>
-      <td>30</td>
-    </tr>
-  </tbody>
-</table>
+## 练习：第25天
 
-## Exercises: Day 25
+1. 从数据目录中读取hacker_news.csv文件。
+2. 获取前五行。
+3. 获取最后五行。
+4. 获取标题列作为pandas系列。
+5. 计算行数和列数。
+6. 过滤包含Python的标题。
+7. 过滤包含JavaScript的标题。
+8. 探索数据并理解其含义。
 
-1. Read the hacker_news.csv file from data directory 
-1. Get the first five rows
-1. Get the last five rows
-1. Get the title column as pandas series
-1. Count the number of rows and columns
-    - Filter the titles which contain python
-    - Filter the titles which contain JavaScript
-    - Explore the data and make sense of it
-
-🎉 CONGRATULATIONS ! 🎉
-
-[<< Day 24](../24_Day_Statistics/24_statistics.md) | [Day 26 >>](../26_Day_Python_web/26_python_web.md)
